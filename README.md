@@ -74,7 +74,7 @@ Account details:
 |username | covidproximo |
 |email | covidinfopt@gmail.com|
 |password | xxx |
-| Api - clientID | 9d7c6d95294614e |
+| Api - clientID | xxx |
 | Api -client secret | xxx |
 
 But we have a problem, since the images are on the google drive. To solve this, we must:
@@ -89,7 +89,7 @@ But we have a problem, since the images are on the google drive. To solve this, 
 
 [Code sample] Get the image from the google drive:
 
-```
+``` python
 # get the image from the google drive
     m_bytes = bytes()
     try:
@@ -106,7 +106,7 @@ But we have a problem, since the images are on the google drive. To solve this, 
 
 [Code sample] Upload image (in bytes) to imgur:
 
-```
+``` python
 # post the image on imgur
     try:
         data = {"image": m_bytes, "type":"file", "name":self.company_name}
@@ -131,7 +131,7 @@ Once it receives the data, it parses it into a list containing several lists, th
 
 We will iterate over all the lines of the csv and the first step we take is to produce a hash that corresponds to the companies signature.
 
-```
+``` python
 company_hash = hashlib.sha256((row[3] + row[4]).encode('utf-8')).hexdigest() 
 # row[3] - parish of the company
 # row[4] - name of the company
@@ -148,7 +148,7 @@ Then, we will get the county geohash, taht will be used to group the different c
 
 If there is a json file with that county identifier, the company json will be added to that json. Else, we will create a new jsons (<county\_geohash>.json) with the json data regarding the company that we validated.
 
-We will also add the company_hash to the file `added_companies_hashes`.
+We will also add the company\_hash to the file `added_companies_hashes`.
 
 
 ## Backups
@@ -167,14 +167,14 @@ Regarding to the access to S3 buckets, env variables are used to store the acces
 
 These variables must be setted before running the cron job.
 
-```
+``` python
 export COVID_AWS_S3_ACCESS_KEY=xxxxxxxx
 export COVID_AWS_S3_SECRET_KEY=yyyyyyyy
 ```
 
 We can load this variables into python, using:
 
-```
+``` bash
 ACCESS_KEY = os.getenv('COVID_AWS_S3_ACCESS_KEY') 
 SECRET_KEY = os.getenv('COVID_AWS_S3_SECRET_KEY')
 ```
@@ -225,7 +225,7 @@ Now, we will create a service to instanciate a Gunicorn Server. This will allow 
 1. Create the service file: `vim /etc/systemd/system/gunicorn_covid_rest_api.service`
 2. The file will contain the following:
 
-```
+``` 
 [Unit]
 Description=gunicorn covid rest api daemon
 After=network.target
