@@ -150,6 +150,12 @@ If there is a json file with that county identifier, the company json will be ad
 
 We will also add the company\_hash to the file `added_companies_hashes`.
 
+## Django REST API
+
+still missing documentation
+
+https://stackoverflow.com/questions/43357687/django-python-rest-framework-no-access-control-allow-origin-header-is-present
+
 
 ## Backups
 
