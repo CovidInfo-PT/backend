@@ -8,6 +8,7 @@ from constants import company_validation_constants
 class CompanyValidator():
 
     hours_regex = r"[0-9]{1,2}:[0-9]{1,2}"
+    email_regex = r".+@.+\..+"
     GDRIVE_DOWNLOAD_BASE_LINK = "https://drive.google.com/uc?export=download&id="
     IMGUR_UPLOAD_API_CAL = "https://api.imgur.com/3/upload"
     
@@ -18,26 +19,17 @@ class CompanyValidator():
         # create dic to hold information
         self.company_dic = {}
 
-        self.district = csv_list[1]
-        self.county = csv_list[2]
-        self.parish = csv_list[3]
-        self.company_name = csv_list[4]
-        self.contacts = [csv_list[5], csv_list[6]]
-        self.gmaps_url = csv_list[7]
-        self.categories = csv_list[8].replace('"', '').split(",")
-        self.image_url_drive = csv_list[9]
-        self.home_delivery = csv_list[10]
-        self.notes = csv_list[11]
-        self.facebook = csv_list[12]
-        self.instagram = csv_list[13]
-        self.twitter = csv_list[14]
-        self.website = csv_list[15]
-        self.schedules = [csv_list[16], csv_list[17], csv_list[18], csv_list[19], csv_list[20], csv_list[21], csv_list[22]]
+        # bind the data
+        self.data_bindings(csv_list)
 
         # validate fields and create company dic
+
         # add address
         self.add_valid_address()
-        # get coordinates, geo hash and location
+        # add the complete address - no validation here!
+        self.company_dic["address"] = self.complete_adress
+        # get coordinates, geo hash and location 
+        # if there is no gmaps url in the csv, the gmaps_url_to_coordinates() will get a valid url
         latitude, longitude = self.gmaps_url_to_coordinates()
         geo_hash = self.coordinates_to_geohash(latitude, longitude)
         self.company_dic["latitude"] = latitude
@@ -46,6 +38,8 @@ class CompanyValidator():
         self.company_dic["gmaps_url"] = self.gmaps_url
         # add social media
         self.add_valid_social_media()
+        # add valid email
+        self.add_valid_email()
         # add name
         self.company_dic["nome"] = self.company_name
         # add website
@@ -70,6 +64,33 @@ class CompanyValidator():
         return self.errors, self.company_dic 
 
 
+    """
+    Binds the csv information to class variables
+    Is the csv changes, adapt the variables here
+    """
+    def data_bindings(self, csv_list):
+        self.district = csv_list[1]
+        self.county = csv_list[2]
+        self.parish = csv_list[3]
+        self.company_name = csv_list[4]
+        self.categories = csv_list[5].replace('"', '').split(",")
+        self.contacts = [csv_list[6], csv_list[7]]
+        self.email = csv_list[8]
+        self.complete_adress = csv_list[9]
+        self.gmaps_url = csv_list[10]        
+        self.image_url_drive = csv_list[11]
+        self.home_delivery = csv_list[12]
+        self.notes = csv_list[13]
+        self.facebook = csv_list[14]
+        self.instagram = csv_list[15]
+        self.twitter = csv_list[16]
+        self.website = csv_list[17]
+        self.schedules = [csv_list[18], csv_list[19], csv_list[20], csv_list[21], csv_list[22], csv_list[23], csv_list[24]]
+
+
+    """
+    Checks if the website is valid, doing a request to validate the URL
+    """
     def add_valid_website(self):
         if self.website.strip()=="":
             self.company_dic["website"] = ""
@@ -82,7 +103,23 @@ class CompanyValidator():
             self.errors.append("Invalid website!")
 
 
-    # VERIFICAR
+    """
+    Checks if the companies email is ok
+    """
+    def add_valid_email(self):
+        if self.email != '':
+            try:
+                if re.search(self.email_regex, self.email).group() != self.email: 
+                    self.errors.append("Invalid email!")
+            except:
+                self.errors.append("Invalid email!")
+
+
+            
+
+    """
+    Add the home delivery boolean to the company
+    """
     def add_valid_home_delivery(self):
         if self.home_delivery.lower() == "sim":
             self.company_dic["entrega_em_casa"] = True
@@ -90,6 +127,9 @@ class CompanyValidator():
             self.company_dic["entrega_em_casa"] = False
 
 
+    """
+    Adds the valid social media to a dictionary <social_media : url>
+    """
     def add_valid_social_media(self):
         if not ('facebook' in self.facebook.lower() or self.facebook==''): 
             self.errors.append("Invalid facebook!")
@@ -105,6 +145,9 @@ class CompanyValidator():
         self.company_dic["redes_sociais"] = social_media
 
 
+    """
+    Check if the given coordinates are inside portugal and produce the geohash
+    """
     def coordinates_to_geohash(self, latitude, longitude, precision=7):
         # check if coordinates in portugal
         if not (36.839377 < latitude < 42.117961):
@@ -115,7 +158,14 @@ class CompanyValidator():
         return geohash.encode(latitude, longitude)
 
 
+    """
+    Check if the company contains a google maps location and traslates this location to coordinates
+    If there is no gmaps url, use the google api to get a location url, given the complete address
+    """
     def gmaps_url_to_coordinates(self):
+        # if no location url
+        if self.gmaps_url == '':
+            self.get_gmaps_url_from_address()
         try:
             # if the link is a shorten one, we need to get the longer version
             complete_url = requests.get(self.gmaps_url).url
@@ -128,6 +178,18 @@ class CompanyValidator():
             return -1, -1
 
     
+
+    """
+    Get the google maps url to a certain location, given the addres of the company
+    """
+    # TODO -> inserir codigo do mendes aqui!
+    def get_gmaps_url_from_address(self):
+        self.gmaps_url = 'https://goo.gl/maps/XYpxDQhaZwMhFcd37'
+        
+
+    """
+    Verifies the district, county and parish 
+    """
     def add_valid_address(self):
         if self.district not in company_validation_constants.valid_districts:  
             self.errors.append("Invalid district!")
@@ -139,8 +201,11 @@ class CompanyValidator():
         self.company_dic["distrito"] = self.district
         self.company_dic["concelho"] = self.county
         self.company_dic["freguesia"] = self.parish
-        
 
+
+    """
+    Adds the valid schedules
+    """
     def add_valid_schedules(self):
         if len(self.schedules) != 7:
             self.errors.append("Invalid number of days in schedule!")
@@ -155,41 +220,52 @@ class CompanyValidator():
             self.errors.append("Error parsing schedules!")
 
 
+    """ 
+    Verifies if some schedule, for a given date is ok
+    A schedule can be a set of hours, or ENCERRADO
+    """
     def get_valid_schedule_for_day(self, day, schedules):
-        # error threatment
-        if day not in company_validation_constants.valid_weekdays: 
-            self.errors.append("Invalid week day for {}!".format(day))
+        try:
+            # error threatment
+            if day not in company_validation_constants.valid_weekdays: 
+                self.errors.append("Invalid week day for {}!".format(day))
 
-        # if no schedule for the day
-        if schedules.strip() == "":
-            return day, ["Sem Informação"]
-        
-        # if company is closed
-        if schedules.strip().lower() == "encerrado":
-            return day, ["Encerrado"]
+            # if no schedule for the day
+            if schedules.strip() == "":
+                return day, ["Sem Informação"]
+            
+            # if company is closed
+            if schedules.strip().lower() == "encerrado":
+                return day, ["Encerrado"]
 
-        # list of schedules for the given day
-        schedules_verified = []
-        # get multiple schedules for a day
-        for schedule in schedules.split("|"):
-            # remove multiple white spaces and strip
-            schedule = ' '.join(schedule.strip().split())
-            start, end = schedule.split("-")
-            start = start.strip()
-            end = end.strip()
+            # list of schedules for the given day
+            schedules_verified = []
+            # get multiple schedules for a day
+            for schedule in schedules.split(","):
+                # remove multiple white spaces and strip
+                schedule = ' '.join(schedule.strip().split())
+                start, end = schedule.split("-")
+                start = start.strip()
+                end = end.strip()
 
-            # assert the data is valid
-            if re.search(self.hours_regex, start).group() != start: 
-                 self.errors.append("Invalid starting hour for {}!".format(day))
-            if re.search(self.hours_regex, end).group() != end:
-                 self.errors.append("Invalid ending hour for {}!".format(day))
+                # assert the data is valid
+                if re.search(self.hours_regex, start).group() != start: 
+                    self.errors.append("Invalid starting hour for {}!".format(day))
+                if re.search(self.hours_regex, end).group() != end:
+                    self.errors.append("Invalid ending hour for {}!".format(day))
 
-            # add to valid schedules
-            schedules_verified.append("{} - {}".format(start, end))
+                # add to valid schedules
+                schedules_verified.append("{} - {}".format(start, end))
 
-        return day, schedules_verified
+            return day, schedules_verified
+        except:
+            self.errors.append("Invalid hours for for {}!".format(day))
+            return 'None', ["None"]
 
 
+    """
+    Adds valid categories
+    """
     def add_valid_categories(self):
         self.company_dic["categorias"] = []
         # assert each category is valid
@@ -198,9 +274,18 @@ class CompanyValidator():
             if cat not in company_validation_constants.valid_categories:
                 self.errors.append("Invalid category for {}!".format(cat))
             else:
+                # exception for saúde
+                if cat == "Saúde (Clínica de Saúde,  Centro Saúde,  Dentista,  entre outros)":
+                    cat = "Saúde"
                 self.company_dic["categorias"].append(cat)
     
     
+    """
+    Adds an image to a company
+    If there is an image to this company, it is hosted on googel drive
+    This function downloads the image, in bytes, from the gdrive and uses the imgur api
+    to upload it. Then the image will be nothing more than a link to the imgur
+    """
     def add_valid_images(self):
         # if the company has no imgage
         if self.image_url_drive.strip() == '':
