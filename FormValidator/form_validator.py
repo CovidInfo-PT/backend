@@ -19,10 +19,7 @@ class FormValidator:
         self.errors = []
         
 
-    #geohash_county_bytes = 4
-    #DATA_BASE_DIR = '../Data'    
-    #ADDED_COMPANIES_FILE_NAME = 'added_companies_hashes'
-    #COUNTIES_DIR = 'Counties'
+ 
     
     def process_form(self):
 
