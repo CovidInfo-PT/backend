@@ -8,19 +8,21 @@ from company_validator import CompanyValidator
 
 class FormValidator:
 
-    def __init__(self, google_sheet, error_col, row_tuples_list, geohash_county_bytes, added_companies_filename, counties_by_geohash_dirname, counties_by_name_dirname):
+    def __init__(self, google_sheet, error_col, validated_checkbox_column, row_tuples_list, geohash_county_bytes, added_companies_filename, counties_by_geohash_dirname, counties_by_name_dirname):
         self.google_sheet = google_sheet
         self.error_col = error_col
+        self.validated_checkbox_column = validated_checkbox_column
         self.row_tuples_list = row_tuples_list
         self.geohash_county_bytes = geohash_county_bytes
         self.added_companies_filename = added_companies_filename
         self.counties_by_geohash_dirname = counties_by_geohash_dirname
         self.counties_by_name_dirname = counties_by_name_dirname
         self.errors = []
-        
-
  
-    
+    """
+    Processes all the companies in the csv document, checking if they contain errors, or are ok to move on
+    to the database
+    """
     def process_form(self):
 
         # get all the companies that have already been added (hash of the companies)
@@ -42,13 +44,13 @@ class FormValidator:
                 # if there are no errors add the company to json
                 if len(errors) == 0:
                     self.add_company(company_dic, company_hash)
-                    self.google_sheet.check_cell(row=row_id+1, col=self.error_col-1)
+                    self.google_sheet.check_cell(row=row_id+1, col=self.validated_checkboxs_column)
                 # else print errors
                 else:
                     print("[Company WAS NOT added to database] {} - {} | Errors={}".format(row_data[3],row_data[4], errors))  
-                    self.google_sheet.uncheck_cell(row=row_id+1, col=self.error_col-1)
+                    self.google_sheet.uncheck_cell(row=row_id+1, col=self.validated_checkbox_column)
 
-                # write errors to sheet
+                # write errors to google sheets
                 self.google_sheet.write_error(error=str(errors), row=row_id+1, col=self.error_col)
 
             else:

@@ -329,22 +329,3 @@ class CompanyValidator():
             self.company_dic["imagens"] = {"logotipo":imgur_link_to_img, "foto_exterior":""}
         except:
             self.errors.append("unable to upload image to imgur!")
-
-
-
-'''
-# Testings
-
-fv = CompanyValidator()
-#print(fv.gmaps_url_to_coordinates("https://goo.gl/maps/VxidNVxVknbuXCN69") == (40.2514534,-8.4322546))
-#print(fv.get_valid_schedule("segunda-feira", "10:00 - 13:00 | 15:00 - 20:00") == ("segunda-feira", ["10:00 - 13:00", "15:00 - 20:00"]))
-#fv.assert_address("Aveiro", "Mealhada", "Pampilhosa")
-
-
-line = "4/3/2020 12:49:52,Viseu,Carregal do Sal,Currelos,Minimercado Celestina,963167335,232961077,https://goo.gl/maps/NEZ53Y5JMVNWMRk96,Mercados,https://drive.google.com/open?id=1SOJgeQmX0auKw_ig3sH9DeeGBrYFSIGP,,,https://www.facebook.com/Minimercado-Celestina-102352701186715/,,,,09:30 - 12:30 | 15:30 - 18h30,09:30 - 12:30 | 15:30 - 18h30,09:30 - 12:30 | 15:30 - 18h30,09:30 - 12:30 | 15:30 - 18h30,09:30 - 12:30 | 15:30 - 18h30,09:30 - 12:30 ,ENCERRADO"
-line_ok = "4/3/2020 12:49:52,Viseu,Carregal do Sal,Carregal do Sal,Minimercado Celestina,963167335,232961077,https://goo.gl/maps/NEZ53Y5JMVNWMRk96,Mercados,https://drive.google.com/open?id=1SOJgeQmX0auKw_ig3sH9DeeGBrYFSIGP,,,https://www.facebook.com/Minimercado-Celestina-102352701186715/,,,,09:30 - 12:30 | 15:30 - 18:30,09:30 - 12:30 | 15:30 - 18:30,09:30 - 12:30 | 15:30 - 18:30,09:30 - 12:30 | 15:30 - 18:30,09:30 - 12:30 | 15:30 - 18:30,,ENCERRADO"
-
-errors, di = fv.process_company(line_ok)
-print(errors)
-print(di)
-'''

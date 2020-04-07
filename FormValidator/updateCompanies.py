@@ -5,7 +5,6 @@ import argparse
 import os
 
 
-
 """
 Will load all the properties needed to run the program from a properties file
 """
@@ -83,7 +82,7 @@ if __name__ == '__main__':
     companies_rows = filter(lambda row_tuple: row_tuple[1][0].strip() != '', companies_rows[1:])
 
     # delegate to the form validator to validate the data
-    form_validator = FormValidator(spreadSheet, properties['error_column'],companies_rows, properties["bytes_per_county_geohassh"], properties["added_companies_path"], properties["counties_by_geohash_dir_path"], properties["counties_by_name_dir_path"])
+    form_validator = FormValidator(spreadSheet, properties['error_column'], properties['validated_checkbox_column'], companies_rows, properties["bytes_per_county_geohassh"], properties["added_companies_path"], properties["counties_by_geohash_dir_path"], properties["counties_by_name_dir_path"])
     form_validator.process_form()
 
 
