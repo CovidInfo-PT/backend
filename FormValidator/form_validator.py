@@ -2,111 +2,117 @@ from os import path, listdir
 import csv
 import json
 import hashlib
+from pathlib import Path
 from company_validator import CompanyValidator
 
 
 class FormValidator:
 
-    GEOHASH_COUNTY_BYTES = 4
-    DATA_BASE_DIR = '../Data'    
-    ADDED_COMPANIES_FILE_NAME = 'added_companies_hashes'
-    COUNTIES_DIR = 'Counties'
-    
-
-    errors = []
-
-    def processCsv(self, csv_path):
-        # check if file exists
-        if not path.exists(csv_path):
-            self.errors.append("Couldn't obatain csv!")
-            return self.errors
+    def __init__(self, google_sheet, error_col, row_tuples_list, geohash_county_bytes, added_companies_filename, counties_by_geohash_dirname, counties_by_name_dirname):
+        self.google_sheet = google_sheet
+        self.error_col = error_col
+        self.row_tuples_list = row_tuples_list
+        self.geohash_county_bytes = geohash_county_bytes
+        self.added_companies_filename = added_companies_filename
+        self.counties_by_geohash_dirname = counties_by_geohash_dirname
+        self.counties_by_name_dirname = counties_by_name_dirname
+        self.errors = []
         
-        # get the list of all the jsons already added
-        self.listed_counties = self.get_added_counties_jsons_names()
+
+ 
+    
+    def process_form(self):
 
         # get all the companies that have already been added (hash of the companies)
-        self.added_companies_lst = self.get_added_compamies_hashes()
+        self.added_companies_lst = self.get_added_companies_hashes()
 
         # Create a company validator
         company_validator = CompanyValidator()
 
-        # process file
-        f = open(csv_path, 'r')
-        # skip header
-        f.readline()
+        for row in self.row_tuples_list:
+            row_id, row_data = row[0], row[1]
 
-        csv_reader = csv.reader(f)
-        for row in csv_reader:
             # get company hash
-            company_hash = hashlib.sha256((row[3] + row[4]).encode('utf-8')).hexdigest()
+            company_hash = hashlib.sha256((row_data[3] + row_data[4]).encode('utf-8')).hexdigest()
 
             # if the company doesnt exist yet, process it
             if  company_hash not in self.added_companies_lst:
-                errors, company_dic = company_validator.process_company(row)
+                errors, company_dic = company_validator.process_company(row_data)
             
                 # if there are no errors add the company to json
                 if len(errors) == 0:
                     self.add_company(company_dic, company_hash)
+                    self.google_sheet.check_cell(row=row_id+1, col=self.error_col-1)
                 # else print errors
                 else:
-                    print("[Company WAS NOT added to database] {} - {} | Errors={}".format(row[3],row[4], errors))  
+                    print("[Company WAS NOT added to database] {} - {} | Errors={}".format(row_data[3],row_data[4], errors))  
+                    self.google_sheet.uncheck_cell(row=row_id+1, col=self.error_col-1)
+
+                # write errors to sheet
+                self.google_sheet.write_error(error=str(errors), row=row_id+1, col=self.error_col)
 
             else:
-                print("[Company already in database] {} - {}".format(row[3],row[4])) 
-
-        return
+                print("[Company already in database] {} - {}".format(row_data[3],row_data[4])) 
 
 
-    def get_added_compamies_hashes(self):
-        f = open("{}/{}".format(self.DATA_BASE_DIR, self.ADDED_COMPANIES_FILE_NAME))
-        return [line.strip() for line in f]
 
-
+    """
+    Given the company dic and the company hash, this function adds the company to the 'database'
+    """
     def add_company(self, company_dic, company_hash):
+        # set company id
+        company_dic["id"] = company_hash
+
+        # get county geohash
         geohash = company_dic["geo_hash"]
-        county_geohash = geohash[:self.GEOHASH_COUNTY_BYTES]
+        county_geohash = geohash[:self.geohash_county_bytes]
 
-        # if there is already a council json created with that hash
-        
-        poss_filename = "{}.json".format(county_geohash)
-        if poss_filename in self.listed_counties:
-            # read json to memory and append to it
-            f = open("{}/{}/{}".format(self.DATA_BASE_DIR, self.COUNTIES_DIR, poss_filename))
-            f_json_in_memory = json.loads(f.read())
-            f_json_in_memory.append(company_dic)
+        # if there is already a county json created with that hash
+        # add the info in the counties_by_geohash dir and in the counties_by_name
+        # the tuples here were created like (output_dir, identifier -> {identifier}.json, list of the identifiers of the output dir)
+        for output_data in [ (self.counties_by_geohash_dirname, county_geohash, self.get_added_counties_jsons_names(self.counties_by_geohash_dirname)), (self.counties_by_name_dirname, company_dic["concelho"], self.get_added_counties_jsons_names(self.counties_by_name_dirname))]:
+            poss_filename = "{}.json".format(output_data[1])
+            if poss_filename in output_data[2]:
+                # read json to memory and append to it
+                f = open(Path(output_data[0], poss_filename))
+                f_json_in_memory = json.loads(f.read())
+                f_json_in_memory.append(company_dic)
+                f.close()
+                print("[Adding new company in existent county ({})] {} - {}".format(poss_filename, company_dic["freguesia"], company_dic["nome"]))
+            else:
+                f_json_in_memory = [company_dic]
+                print("[Adding new company in new county ({})] {} - {}".format(poss_filename, company_dic["freguesia"], company_dic["nome"]))
 
-            # parse to json and override file
+            # parse to json
             f_json = json.dumps(f_json_in_memory, ensure_ascii=False).encode('utf8').decode("utf8")
-            f = open("{}/{}/{}".format(self.DATA_BASE_DIR, self.COUNTIES_DIR, poss_filename), "w")
+            # write the data
+            f = open(Path(output_data[0], poss_filename), 'w')
             f.write(f_json)
             f.close()
-            print("[New company in existant county ({})] {} - {}".format(county_geohash, company_dic["freguesia"], company_dic["nome"]))
-        
-        else:
-            data = [company_dic]
-            f_json = json.dumps(data, ensure_ascii=False).encode('utf8').decode("utf8")
-            f = open("{}/{}/{}".format(self.DATA_BASE_DIR, self.COUNTIES_DIR, poss_filename), "w")
-            f.write(f_json)
-            f.close()
-            print("[New company in new county ({})] {} - {}".format(county_geohash, company_dic["freguesia"], company_dic["nome"]))
 
         # add company hash to list of added companies
-        f = open("{}/{}".format(self.DATA_BASE_DIR, self.ADDED_COMPANIES_FILE_NAME), "a")
+        f = open(self.added_companies_filename, "a")
         f.write(str(company_hash) + "\n")
         f.close()
 
         #add also to the list that is loaded to memory
         self.added_companies_lst.append(company_hash)
         
-        return
 
-
-    def get_added_counties_jsons_names(self):
+    """
+    Gets a list of all the county jsons already created
+    """
+    def get_added_counties_jsons_names(self, dirname):
         files = []
-        for f in listdir("{}/{}".format(self.DATA_BASE_DIR, self.COUNTIES_DIR)):
-            if path.isfile("{}/{}/{}".format(self.DATA_BASE_DIR, self.COUNTIES_DIR, f)):
+        for f in listdir(dirname):
+            if path.isfile(Path(dirname,f)):
                 files.append(f)
         return files
 
-fv = FormValidator()
-fv.processCsv("teste_v3.csv")
+
+    """
+    Gets a list of all the companies that are already in database
+    """
+    def get_added_companies_hashes(self):
+        f = open(self.added_companies_filename)
+        return [line.strip() for line in f]

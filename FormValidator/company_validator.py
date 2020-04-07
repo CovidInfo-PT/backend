@@ -20,7 +20,8 @@ class CompanyValidator():
         self.company_dic = {}
 
         # bind the data
-        self.data_bindings(csv_list)
+        if not self.data_bindings(csv_list): 
+            return self.errors, self.company_dic 
 
         # validate fields and create company dic
 
@@ -69,23 +70,28 @@ class CompanyValidator():
     Is the csv changes, adapt the variables here
     """
     def data_bindings(self, csv_list):
-        self.district = csv_list[1]
-        self.county = csv_list[2]
-        self.parish = csv_list[3]
-        self.company_name = csv_list[4]
-        self.categories = csv_list[5].replace('"', '').split(",")
-        self.contacts = [csv_list[6], csv_list[7]]
-        self.email = csv_list[8]
-        self.complete_adress = csv_list[9]
-        self.gmaps_url = csv_list[10]        
-        self.image_url_drive = csv_list[11]
-        self.home_delivery = csv_list[12]
-        self.notes = csv_list[13]
-        self.facebook = csv_list[14]
-        self.instagram = csv_list[15]
-        self.twitter = csv_list[16]
-        self.website = csv_list[17]
-        self.schedules = [csv_list[18], csv_list[19], csv_list[20], csv_list[21], csv_list[22], csv_list[23], csv_list[24]]
+        try:
+            self.district = csv_list[1]
+            self.county = csv_list[2]
+            self.parish = csv_list[3]
+            self.company_name = csv_list[4]
+            self.categories = csv_list[5].replace('"', '').split(",")
+            self.contacts = [csv_list[6], csv_list[7]]
+            self.email = csv_list[8]
+            self.complete_adress = csv_list[9]
+            self.gmaps_url = csv_list[10]        
+            self.image_url_drive = csv_list[11]
+            self.home_delivery = csv_list[12]
+            self.notes = csv_list[13]
+            self.facebook = csv_list[14]
+            self.instagram = csv_list[15]
+            self.twitter = csv_list[16]
+            self.website = csv_list[17]
+            self.schedules = [csv_list[18], csv_list[19], csv_list[20], csv_list[21], csv_list[22], csv_list[23], csv_list[24]]
+            return True
+        except:
+            self.errors.append("Couldn't parse the csv line - list index out of range")
+            return False
 
 
     """
