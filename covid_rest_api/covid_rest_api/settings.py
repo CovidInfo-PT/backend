@@ -131,3 +131,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 
 CORS_ORIGIN_ALLOW_ALL=True
+
+
+# In order to restrict the domains that can comunicate with this API, 
+# uncomment the following lines: 
+
+# CORS_ORIGIN_ALLOW_ALL = False # comment line 133
+
+# CORS_ORIGIN_WHITELIST = (
+#   '<ADDRESS>[:PORT]',
+# )
