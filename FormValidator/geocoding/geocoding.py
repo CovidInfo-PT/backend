@@ -20,12 +20,14 @@ class Geocoding:
         display = Display(visible=0, size=(1024, 768)) 
         display.start() 
         self._browser = webdriver.Firefox()
+        print("Browser opened!")
         self.get_page()
     
     """
     Method to close the browser.
     """
     def close_browser(self):
+        print("Browser closed")
         self._browser.close()
     
     """
@@ -38,6 +40,7 @@ class Geocoding:
         try:
             self._browser.get(url)
             self._url = self._browser.current_url
+            print(f"Current url: {self._url}")
             assert title in self._browser.title
         except Exception as e:
             raise e
@@ -82,6 +85,7 @@ class Geocoding:
     """
     def search(self, address):
         
+        print(f"Searching for {address}")
         # google maps url
         if 'goo' in address:
             return self.get_coordinates(requests.get(address).url)
