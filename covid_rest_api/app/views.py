@@ -63,6 +63,36 @@ def counties_by_distric(request):
 
 
 
+def companies_by_county(county, county_geohash=None):
+    
+    try:
+        f = open(f'static/companies_by_location/by_name/{county}.json', 'r')
+        companies_by_name = json.loads(f.read())
+    except Exception as e:
+        print(e)
+        companies_by_name = {}
+
+    if county_geohash is None:
+        try:
+            f = open('static/auxiliar/counties_geohashes.json', 'r')
+            geohashes = json.loads(f.read())
+            county_geohash = geohashes[county]
+        except Exception as e:
+            print(e)
+            return
+
+    try: 
+        f = open(f'static/companies_by_location/by_geohash/{county_geohash[:4]}.json', 'r')
+        companies_by_geohash = json.loads(f.read())
+    except Exception as e:
+        print(e)
+        companies_by_geohash = {}
+    
+    all_companies = {company:companies_by_name[company] for company in companies_by_name}
+    for company in companies_by_geohash:
+        all_companies[company] = companies_by_geohash[company]
+    
+    return all_companies
 
 @api_view(["GET"])
 def companies_by_location(request):
@@ -74,22 +104,31 @@ def companies_by_location(request):
 
         county = request.GET['county']
 
-        f = open(f'static/companies_by_location/by_name/{county}.json', 'r')
-        companies_by_name = json.loads(f.read())
-
-        f = open('static/auxiliar/counties_geohashes.json', 'r')
-        geohashes = json.loads(f.read())
-        county_geohash = geohashes[county]
-
-        f = open(f'static/companies_by_location/by_geohash/{county_geohash[:4]}.json', 'r')
-        companies_by_geohash = json.loads(f.read())
-
-
-        all_companies = {company:companies_by_name[company] for company in companies_by_name}
-        for company in companies_by_geohash:
-            all_companies[company] = companies_by_geohash[company]
+        all_companies = companies_by_county(county)
 
         return Response({"state": "success", "county": county, "companies": all_companies})
+    
+    if 'district' in param_keys:
+
+        district = request.GET['district']
+
+        f = open(f'static/auxiliar/counties_by_district_geohashed.json', 'r')
+        districts = json.loads(f.read())
+        
+        all_companies = {}
+        try: 
+            for county in districts[district]:
+                county_companies = companies_by_county(county[0], county[1])
+                all_companies.update(county_companies)
+        
+            return Response({"state": "success", "district": district, "companies": all_companies})
+            
+        except Exception as e:
+            print("District not found!")
+
+
+
+
 
 
 
