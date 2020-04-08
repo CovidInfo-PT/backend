@@ -4,7 +4,6 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-from pyvirtualdisplay import Display 
 
 """
 This class opens a Selenium client on Firefox and searchs for a location on Google Maps.
@@ -17,9 +16,9 @@ class Geocoding:
     It opens the Firefox browser with Selenium. Then, it calls the get_page() method.
     """
     def __init__(self):
-        display = Display(visible=0, size=(1024, 768)) 
-        display.start() 
-        self._browser = webdriver.Firefox()
+        fireFoxOptions = webdriver.FirefoxOptions()
+        fireFoxOptions.set_headless()
+        self._browser = webdriver.Firefox(firefox_options=fireFoxOptions)
         print("Browser opened!")
         self.get_page()
     
@@ -85,6 +84,7 @@ class Geocoding:
     """
     def search(self, address):
         
+        self._browser.set_window_size(1120,550)
         print(f"Searching for {address}")
         # google maps url
         if 'goo' in address:
@@ -100,7 +100,10 @@ class Geocoding:
         self._elem.send_keys(address + Keys.RETURN)
         
         # this loop is necessary due to Google Maps redirecting
-        while True:
+        tries = 0
+        while tries < 6:
+            tries += 1
+            
             if self._browser.current_url != self._url:
                 return self.get_coordinates(self._browser.current_url)
             
