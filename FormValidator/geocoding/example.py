@@ -2,6 +2,7 @@ from geocoding import Geocoding
 
 if __name__ == '__main__':
 
+    # open Google Maps page with Firefox
     geocoder = Geocoding()
 
     addresses = [
@@ -15,8 +16,12 @@ if __name__ == '__main__':
     ]
 
     for a in addresses:
+        # search for a place on Google Maps
         coordinates = geocoder.search(a)
+
+        # compute geohash
         geohash = geocoder.compute_geohash(coordinates[0], coordinates[1])
+        
         print(f"Address: {a}, Coordinates: {coordinates}, Geohash: {geohash}")
     
     geocoder.close_browser()
