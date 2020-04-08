@@ -1,3 +1,4 @@
+import pygeohash as pgh
 import requests
 import time
 from selenium import webdriver
@@ -27,6 +28,9 @@ class Geocoding:
         except Exception as e:
             raise e
     
+    def compute_geohash(self, lat, lon):
+        return pgh.encode(lat, lon)
+
     def get_coordinates(self, url):
         try:
             return [float(coord) for coord in url.split('@')[1].split(',')[:2]]
