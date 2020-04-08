@@ -152,10 +152,497 @@ We will also add the company\_hash to the file `added_companies_hashes`.
 
 ## Django REST API
 
-still missing documentation
+### Endpoints
 
-https://stackoverflow.com/questions/43357687/django-python-rest-framework-no-access-control-allow-origin-header-is-present
+#### GET /all_districts
 
+This endpoint returns a list of all districts.  
+
+```json
+{
+    "state": "success",
+    "districts": [
+        "Ilha Terceira",
+        "Ilha de Porto Santo",
+        "Ilha Graciosa",
+        "Ilha de São Miguel",
+        "Coimbra",
+        "Santarém",
+        "Vila Real",
+        "Viana do Castelo",
+        ...
+    ]
+}
+```
+
+#### GET /all_counties
+
+This endpoint returns a list of all counties and their geohashes per district.  
+
+```json
+{
+    "state": "success",
+    "counties": {
+        "Aveiro": [
+            [
+                "Murtosa",
+                "ez1zervsvt2j"
+            ],
+            [
+                "Ovar",
+                "ez3b75y269m2"
+            ],
+            ...
+            [
+                "Arouca",
+                "ez60u6uu0zcy"
+            ]
+        ],
+        "Beja": [
+            [
+                "Barrancos",
+                "eyg0cjwu95d5"
+            ],
+            [
+                "Serpa",
+                "eydxynpmzyp0"
+            ],
+            [
+                "Cuba",
+                "eyf3k71eu9e0"
+            ],
+        ...
+    }
+}
+```  
+
+### GET /counties_by_distric
+
+This endpoint returns a list of all counties and their geohashes of a given district.
+
+#### Path parameters
+
+* `district` string
+
+**Example of request:**  
+
+```json
+GET /counties_by_distric?district=Aveiro
+
+{
+    "state": "success",
+    "district": "Aveiro",
+    "counties": [
+        [
+            "Murtosa",
+            "ez1zervsvt2j"
+        ],
+        [
+            "Ovar",
+            "ez3b75y269m2"
+        ],
+        [
+            "Santa Maria da Feira",
+            "ez3bvd5rv6u7"
+        ],
+        ...
+    ]
+```
+
+### GET /companies_by_location
+
+This endpoint returns a list of all companies in a specific location.
+This location could be a district, a county or a geohash.
+
+#### Path parameters
+
+* `district` string
+* `county` string
+* `geohash` string
+
+#### Examples
+
+1. All companies in ***Viseu***: 
+
+```json
+GET companies_by_location?district=Viseu
+{
+    "state": "success",
+    "district": "Viseu",
+    "companies": {
+        "8280dcb3118326d3cffe217a74bef7cd42c9a35b3cb4083149a28e670eee04a0": {
+            "district": "Viseu",
+            "county": "Carregal do Sal",
+            "parish": "Cabanas de Viriato",
+            "address": "R. Viriato 268, 3430-649 Cabanas de Viriato",
+            "latitude": 40.468711,
+            "longitude": -7.9792693,
+            "geo_hash": "ez4q4rjemd98",
+            "gmaps_url": "https://goo.gl/maps/5UfX8SUNKvTCNqdn7",
+            "social": {
+                "facebook": "https://www.facebook.com/farmaciaramoscabanas/",
+                "instagram": "",
+                "twitter": ""
+            },
+            "name": "Farmácia Ramos",
+            "website": "",
+            "notes": "",
+            "home_delivery": false,
+            "contacts": {
+                "cellphone": [
+                    "232698244",
+                    ""
+                ],
+                "telephone": []
+            },
+            "categories": [
+                "Farmácia"
+            ],
+            "schedules": {
+                "segunda-feira": [
+                    "09:00 - 19:00"
+                ],
+                "terça-feira": [
+                    "09:00 - 19:00"
+                ],
+                "quarta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "quinta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "sexta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "sábado": [
+                    "09:00 - 13:00"
+                ],
+                "domingo": [
+                    "Encerrado"
+                ]
+            },
+            "images": {
+                "logo": "https://i.imgur.com/K5dpzkY.png",
+                "exterior": ""
+            },
+            "id": "8280dcb3118326d3cffe217a74bef7cd42c9a35b3cb4083149a28e670eee04a0"
+        },
+        "f3c61ccc5e80360fe44a00ba696ea187ebf02c2955dfe7fc75d84d0eaf486866": {
+            "district": "Viseu",
+            "county": "Carregal do Sal",
+            "parish": "Carregal do Sal",
+            "address": "R. São João de Deus 1, 3430-055 Carregal do Sal",
+            "latitude": 40.4315571,
+            "longitude": -7.9926806,
+            "geo_hash": "ez4q407fvh92",
+            "gmaps_url": "https://goo.gl/maps/iJuH6zrjm9APRv9d7",
+            "social": {
+                "facebook": "https://www.facebook.com/farmaciamodernacarregaldosal/",
+                "instagram": "",
+                "twitter": ""
+            },
+            "name": "Farmácia Moderna",
+            "website": "",
+            "notes": "",
+            "home_delivery": true,
+            "contacts": {
+                "cellphone": [
+                    "232968101",
+                    ""
+                ],
+                "telephone": []
+            },
+            "categories": [
+                "Farmácia"
+            ],
+            "schedules": {
+                "segunda-feira": [
+                    "09:00 - 19:00"
+                ],
+                "terça-feira": [
+                    "09:00 - 19:00"
+                ],
+                "quarta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "quinta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "sexta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "sábado": [
+                    "09:00 - 19:00"
+                ],
+                "domingo": [
+                    "Encerrado"
+                ]
+            },
+            "images": {
+                "logo": "https://i.imgur.com/cbrFE2i.jpg",
+                "exterior": ""
+            },
+            "id": "f3c61ccc5e80360fe44a00ba696ea187ebf02c2955dfe7fc75d84d0eaf486866"
+        },
+        ...
+    }
+}
+```
+
+2. All companies in ***Carregal do Sal***:
+
+```json
+GET /companies_by_location?county=Carregal do Sal
+
+{
+    "state": "success",
+    "county": "Carregal do Sal",
+    "companies": {
+        "8280dcb3118326d3cffe217a74bef7cd42c9a35b3cb4083149a28e670eee04a0": {
+            "district": "Viseu",
+            "county": "Carregal do Sal",
+            "parish": "Cabanas de Viriato",
+            "address": "R. Viriato 268, 3430-649 Cabanas de Viriato",
+            "latitude": 40.468711,
+            "longitude": -7.9792693,
+            "geo_hash": "ez4q4rjemd98",
+            "gmaps_url": "https://goo.gl/maps/5UfX8SUNKvTCNqdn7",
+            "social": {
+                "facebook": "https://www.facebook.com/farmaciaramoscabanas/",
+                "instagram": "",
+                "twitter": ""
+            },
+            "name": "Farmácia Ramos",
+            "website": "",
+            "notes": "",
+            "home_delivery": false,
+            "contacts": {
+                "cellphone": [
+                    "232698244",
+                    ""
+                ],
+                "telephone": []
+            },
+            "categories": [
+                "Farmácia"
+            ],
+            "schedules": {
+                "segunda-feira": [
+                    "09:00 - 19:00"
+                ],
+                "terça-feira": [
+                    "09:00 - 19:00"
+                ],
+                "quarta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "quinta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "sexta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "sábado": [
+                    "09:00 - 13:00"
+                ],
+                "domingo": [
+                    "Encerrado"
+                ]
+            },
+            "images": {
+                "logo": "https://i.imgur.com/K5dpzkY.png",
+                "exterior": ""
+            },
+            "id": "8280dcb3118326d3cffe217a74bef7cd42c9a35b3cb4083149a28e670eee04a0"
+        },
+        "f3c61ccc5e80360fe44a00ba696ea187ebf02c2955dfe7fc75d84d0eaf486866": {
+            "district": "Viseu",
+            "county": "Carregal do Sal",
+            "parish": "Carregal do Sal",
+            "address": "R. São João de Deus 1, 3430-055 Carregal do Sal",
+            "latitude": 40.4315571,
+            "longitude": -7.9926806,
+            "geo_hash": "ez4q407fvh92",
+            "gmaps_url": "https://goo.gl/maps/iJuH6zrjm9APRv9d7",
+            "social": {
+                "facebook": "https://www.facebook.com/farmaciamodernacarregaldosal/",
+                "instagram": "",
+                "twitter": ""
+            },
+            "name": "Farmácia Moderna",
+            "website": "",
+            "notes": "",
+            "home_delivery": true,
+            "contacts": {
+                "cellphone": [
+                    "232968101",
+                    ""
+                ],
+                "telephone": []
+            },
+            "categories": [
+                "Farmácia"
+            ],
+            "schedules": {
+                "segunda-feira": [
+                    "09:00 - 19:00"
+                ],
+                "terça-feira": [
+                    "09:00 - 19:00"
+                ],
+                "quarta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "quinta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "sexta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "sábado": [
+                    "09:00 - 19:00"
+                ],
+                "domingo": [
+                    "Encerrado"
+                ]
+            },
+            "images": {
+                "logo": "https://i.imgur.com/cbrFE2i.jpg",
+                "exterior": ""
+            },
+            "id": "f3c61ccc5e80360fe44a00ba696ea187ebf02c2955dfe7fc75d84d0eaf486866"
+        },
+        ...
+    }
+}
+```
+
+2. All companies in ***ez4q1bsmsj7w***:
+
+```json
+GET /companies_by_location?geohash=ez4q1bsmsj7w
+
+{
+    "state": "success",
+    "county": "Carregal do Sal",
+    "companies": {
+        "8280dcb3118326d3cffe217a74bef7cd42c9a35b3cb4083149a28e670eee04a0": {
+            "district": "Viseu",
+            "county": "Carregal do Sal",
+            "parish": "Cabanas de Viriato",
+            "address": "R. Viriato 268, 3430-649 Cabanas de Viriato",
+            "latitude": 40.468711,
+            "longitude": -7.9792693,
+            "geo_hash": "ez4q4rjemd98",
+            "gmaps_url": "https://goo.gl/maps/5UfX8SUNKvTCNqdn7",
+            "social": {
+                "facebook": "https://www.facebook.com/farmaciaramoscabanas/",
+                "instagram": "",
+                "twitter": ""
+            },
+            "name": "Farmácia Ramos",
+            "website": "",
+            "notes": "",
+            "home_delivery": false,
+            "contacts": {
+                "cellphone": [
+                    "232698244",
+                    ""
+                ],
+                "telephone": []
+            },
+            "categories": [
+                "Farmácia"
+            ],
+            "schedules": {
+                "segunda-feira": [
+                    "09:00 - 19:00"
+                ],
+                "terça-feira": [
+                    "09:00 - 19:00"
+                ],
+                "quarta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "quinta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "sexta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "sábado": [
+                    "09:00 - 13:00"
+                ],
+                "domingo": [
+                    "Encerrado"
+                ]
+            },
+            "images": {
+                "logo": "https://i.imgur.com/K5dpzkY.png",
+                "exterior": ""
+            },
+            "id": "8280dcb3118326d3cffe217a74bef7cd42c9a35b3cb4083149a28e670eee04a0"
+        },
+        "f3c61ccc5e80360fe44a00ba696ea187ebf02c2955dfe7fc75d84d0eaf486866": {
+            "district": "Viseu",
+            "county": "Carregal do Sal",
+            "parish": "Carregal do Sal",
+            "address": "R. São João de Deus 1, 3430-055 Carregal do Sal",
+            "latitude": 40.4315571,
+            "longitude": -7.9926806,
+            "geo_hash": "ez4q407fvh92",
+            "gmaps_url": "https://goo.gl/maps/iJuH6zrjm9APRv9d7",
+            "social": {
+                "facebook": "https://www.facebook.com/farmaciamodernacarregaldosal/",
+                "instagram": "",
+                "twitter": ""
+            },
+            "name": "Farmácia Moderna",
+            "website": "",
+            "notes": "",
+            "home_delivery": true,
+            "contacts": {
+                "cellphone": [
+                    "232968101",
+                    ""
+                ],
+                "telephone": []
+            },
+            "categories": [
+                "Farmácia"
+            ],
+            "schedules": {
+                "segunda-feira": [
+                    "09:00 - 19:00"
+                ],
+                "terça-feira": [
+                    "09:00 - 19:00"
+                ],
+                "quarta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "quinta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "sexta-feira": [
+                    "09:00 - 19:00"
+                ],
+                "sábado": [
+                    "09:00 - 19:00"
+                ],
+                "domingo": [
+                    "Encerrado"
+                ]
+            },
+            "images": {
+                "logo": "https://i.imgur.com/cbrFE2i.jpg",
+                "exterior": ""
+            },
+            "id": "f3c61ccc5e80360fe44a00ba696ea187ebf02c2955dfe7fc75d84d0eaf486866"
+        },
+    }
+}
+```
 
 ## Backups
 
