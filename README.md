@@ -190,7 +190,7 @@ The cron job must run, at least, once a day.
 Note: All the python modules needed are inside `venv_backups`
 
 
-## Deployment
+## REST API Deployment
 
 To deploy our solution, we are using the VM provided by prof. João Paulo Barraca, over `78.46.194.121`.
 
@@ -337,3 +337,59 @@ server {
 ```
 
 
+## Interface Deployment
+
+1. Create a directory for the interface files `mkdir /var/www/proxi-mo.pt`
+2. Copy all the files to `cp -r Front-End/* /var/www/proxi-mo.pt/`
+3. Create the nginx confirguration file `vim /etc/nginx/sites-available/covid_interface`
+4. Create a hard link to the sites-enabled `ln /etc/nginx/sites-available/covid_interface  /etc/nginx/sites-enabled/`
+5. Point our domain (amen) to our server: 
+	- Dominio & DNS -> Configuracao DNS -> Gestao Avancada
+	- Change the A record from proxi-mo.pt to the server ip address
+	- Do the same with www.proxi-mo.pt
+6. Start the nginx service
+7. You should be done, now!
+
+
+Nginx configuration file
+
+```
+server {
+	# listen to this ports
+	listen 80;
+	listen [::]:80;
+
+	# file location
+	root /var/www/proxi-mo.pt;
+
+	# the index page to be displayed
+	index index.html;
+
+	# this server will treat all the request from the following dns
+	server_name proxi-mo.pt www.proxi-mo.pt;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+	# setup CACHING MECHANISMS
+	# images will expire after 15 days
+	# cache-control public -> all users
+	location ~* \.(jpg|jpeg|png|gif|ico)$ {
+        	expires 15d;
+		add_header Cache-Control "public";
+	}
+	# all scripts and css will expire after 7 days
+	location ~* \.(css|js)$ {
+		expires 7d;
+	}
+
+	# GZIP
+	# gzip compression can greatly decrease the size of files during transmission (sometimes by over 80%)
+	# A security vulnerability exists when you enable gzip compression in conjunction with HTTPS that allows attackers to decrypt data
+	# we are serving http, not https, so it is ok!
+	gzip on;
+   	gzip_types application/javascript image/* text/css;
+   	gunzip on;
+}
+```
