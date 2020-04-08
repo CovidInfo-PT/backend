@@ -28,7 +28,7 @@ class CompanyValidator():
         # add address
         self.add_valid_address()
         # add the complete address - no validation here!
-        self.company_dic["address"] = self.complete_adress
+        self.company_dic["address"] = self.complete_address
         # get coordinates, geo hash and location 
         # if there is no gmaps url in the csv, the gmaps_url_to_coordinates() will get a valid url
         latitude, longitude = self.gmaps_url_to_coordinates()
@@ -42,17 +42,15 @@ class CompanyValidator():
         # add valid email
         self.add_valid_email()
         # add name
-        self.company_dic["nome"] = self.company_name
+        self.company_dic["name"] = self.company_name
         # add website
         self.add_valid_website()
         # add notes
-        self.company_dic["notas"] = self.notes
+        self.company_dic["notes"] = self.notes
         # add home delivery
         self.add_valid_home_delivery()
         # add cellphones
-        self.company_dic["contactos"] = {"telemovel":self.contacts, "telefone":[]}
-        # add home address - empty for now
-        self.company_dic["morada"] = ""
+        self.company_dic["contacts"] = {"cellphone":self.contacts, "telephone":[]}
         # add valid categories
         self.add_valid_categories()
         # add valid schedules
@@ -78,7 +76,7 @@ class CompanyValidator():
             self.categories = csv_list[5].replace('"', '').split(",")
             self.contacts = [csv_list[6], csv_list[7]]
             self.email = csv_list[8]
-            self.complete_adress = csv_list[9]
+            self.complete_address = csv_list[9]
             self.gmaps_url = csv_list[10]        
             self.image_url_drive = csv_list[11]
             self.home_delivery = csv_list[12]
@@ -128,9 +126,9 @@ class CompanyValidator():
     """
     def add_valid_home_delivery(self):
         if self.home_delivery.lower() == "sim":
-            self.company_dic["entrega_em_casa"] = True
+            self.company_dic["home_delivery"] = True
         else:
-            self.company_dic["entrega_em_casa"] = False
+            self.company_dic["home_delivery"] = False
 
 
     """
@@ -148,7 +146,7 @@ class CompanyValidator():
         social_media["facebook"] = self.facebook
         social_media["instagram"] = self.instagram
         social_media["twitter"] = self.twitter
-        self.company_dic["redes_sociais"] = social_media
+        self.company_dic["social"] = social_media
 
 
     """
@@ -204,9 +202,9 @@ class CompanyValidator():
         if self.parish not in company_validation_constants.valid_parishes_by_county[self.county]: 
             self.errors.append("Invalid parish!")
 
-        self.company_dic["distrito"] = self.district
-        self.company_dic["concelho"] = self.county
-        self.company_dic["freguesia"] = self.parish
+        self.company_dic["district"] = self.district
+        self.company_dic["county"] = self.county
+        self.company_dic["parish"] = self.parish
 
 
     """
@@ -216,12 +214,12 @@ class CompanyValidator():
         if len(self.schedules) != 7:
             self.errors.append("Invalid number of days in schedule!")
         
-        self.company_dic["horarios"] = {}
+        self.company_dic["schedules"] = {}
 
         try:
             for i in range(0,7):
                 day, schedule = self.get_valid_schedule_for_day(company_validation_constants.valid_weekdays[i], self.schedules[i])
-                self.company_dic["horarios"][day] = schedule
+                self.company_dic["schedules"][day] = schedule
         except:
             self.errors.append("Error parsing schedules!")
 
@@ -273,7 +271,7 @@ class CompanyValidator():
     Adds valid categories
     """
     def add_valid_categories(self):
-        self.company_dic["categorias"] = []
+        self.company_dic["categories"] = []
         # assert each category is valid
         for cat in self.categories:
             cat = cat.strip()
@@ -283,7 +281,7 @@ class CompanyValidator():
                 # exception for saúde
                 if cat == "Saúde (Clínica de Saúde,  Centro Saúde,  Dentista,  entre outros)":
                     cat = "Saúde"
-                self.company_dic["categorias"].append(cat)
+                self.company_dic["categories"].append(cat)
     
     
     """
@@ -295,7 +293,7 @@ class CompanyValidator():
     def add_valid_images(self):
         # if the company has no imgage
         if self.image_url_drive.strip() == '':
-            self.company_dic["imagens"] = {"logotipo":"", "foto_exterior":""}
+            self.company_dic["images"] = {"logo":"", "exterior":""}
             return
 
         # if link is incorrect
@@ -326,6 +324,6 @@ class CompanyValidator():
                 self.errors.append("Error on uploading image to imgur - {}!".format(r.json()["data"]["error"]))
             # if all ok
             imgur_link_to_img = r.json()["data"]["link"]
-            self.company_dic["imagens"] = {"logotipo":imgur_link_to_img, "foto_exterior":""}
+            self.company_dic["images"] = {"logo":imgur_link_to_img, "exterior":""}
         except:
             self.errors.append("unable to upload image to imgur!")

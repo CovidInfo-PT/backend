@@ -44,7 +44,7 @@ class FormValidator:
                 # if there are no errors add the company to json
                 if len(errors) == 0:
                     self.add_company(company_dic, company_hash)
-                    self.google_sheet.check_cell(row=row_id+1, col=self.validated_checkboxs_column)
+                    self.google_sheet.check_cell(row=row_id+1, col=self.validated_checkbox_column)
                 # else print errors
                 else:
                     print("[Company WAS NOT added to database] {} - {} | Errors={}".format(row_data[3],row_data[4], errors))  
@@ -72,18 +72,18 @@ class FormValidator:
         # if there is already a county json created with that hash
         # add the info in the counties_by_geohash dir and in the counties_by_name
         # the tuples here were created like (output_dir, identifier -> {identifier}.json, list of the identifiers of the output dir)
-        for output_data in [ (self.counties_by_geohash_dirname, county_geohash, self.get_added_counties_jsons_names(self.counties_by_geohash_dirname)), (self.counties_by_name_dirname, company_dic["concelho"], self.get_added_counties_jsons_names(self.counties_by_name_dirname))]:
+        for output_data in [ (self.counties_by_geohash_dirname, county_geohash, self.get_added_counties_jsons_names(self.counties_by_geohash_dirname)), (self.counties_by_name_dirname, company_dic["county"], self.get_added_counties_jsons_names(self.counties_by_name_dirname))]:
             poss_filename = "{}.json".format(output_data[1])
             if poss_filename in output_data[2]:
                 # read json to memory and append to it
                 f = open(Path(output_data[0], poss_filename))
                 f_json_in_memory = json.loads(f.read())
-                f_json_in_memory.append(company_dic)
+                f_json_in_memory[company_hash] = company_dic 
                 f.close()
-                print("[Adding new company in existent county ({})] {} - {}".format(poss_filename, company_dic["freguesia"], company_dic["nome"]))
+                print("[Adding new company in existent county ({})] {} - {}".format(poss_filename, company_dic["parish"], company_dic["name"]))
             else:
-                f_json_in_memory = [company_dic]
-                print("[Adding new company in new county ({})] {} - {}".format(poss_filename, company_dic["freguesia"], company_dic["nome"]))
+                f_json_in_memory = {company_hash:company_dic}
+                print("[Adding new company in new county ({})] {} - {}".format(poss_filename, company_dic["parish"], company_dic["name"]))
 
             # parse to json
             f_json = json.dumps(f_json_in_memory, ensure_ascii=False).encode('utf8').decode("utf8")
