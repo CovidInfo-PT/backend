@@ -149,3 +149,13 @@ def companies_by_location(request):
     
     else:
         return Response({"state": "error", "error": "You must provide a district, a county or a geohash!"}, status=HTTP_200_OK)
+
+
+@api_view(["GET"])
+def categories(request):
+
+    # in memory to avoid disk access
+    categories = ['Correio', 'Saúde', 'Farmácias', 'Restaurantes', 'Mercados', 'Padarias', 'Talhos', 'Peixarias', 'Bombas de Combustível', 'Gás', 'Oficinas', 'Bancos', 'Serviços Administrativos', 'Telecomunicações', 'Veterinários', 'Recolha de Lixo', 'Outros']
+
+    return Response({"state": "success", "categories": sorted(categories)}, status=HTTP_200_OK)
+

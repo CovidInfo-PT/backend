@@ -43,5 +43,6 @@ urlpatterns = [
     path('all_districts', views.all_districts, name='all_districts'),
     path('all_counties', views.all_counties, name='all_counties'),
     path('counties_by_distric', views.counties_by_distric, name='counties_by_distric'),
-    path('companies_by_location', views.companies_by_location, name='companies_by_location')
+    path('companies_by_location', views.companies_by_location, name='companies_by_location'),
+    path('categories', views.categories, name='categories')
 ]
