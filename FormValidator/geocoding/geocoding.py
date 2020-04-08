@@ -4,6 +4,8 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
+from pyvirtualdisplay import Display 
+
 """
 This class opens a Selenium client on Firefox and searchs for a location on Google Maps.
 Then, it gets the coordinates present in the url and computes their geohash.
@@ -15,6 +17,8 @@ class Geocoding:
     It opens the Firefox browser with Selenium. Then, it calls the get_page() method.
     """
     def __init__(self):
+        display = Display(visible=0, size=(1024, 768)) 
+        display.start() 
         self._browser = webdriver.Firefox()
         self.get_page()
     
