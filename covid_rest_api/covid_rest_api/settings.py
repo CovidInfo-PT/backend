@@ -26,6 +26,7 @@ SECRET_KEY = 'vbd9rv1jidm$ot@ti+0%mh2u4&en1k!yb=_s8dp@4#r252072#'
 DEBUG = True #True
 
 ALLOWED_HOSTS = ['127.0.0.1',
+                 'localhost',
                  'api.proxi-mo.pt',
                  ]
 
