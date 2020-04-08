@@ -66,7 +66,7 @@ def counties_by_distric(request):
 def companies_by_county(county, county_geohash=None):
     
     try:
-        f = open(f'static/companies_by_location/by_name/{county}.json', 'r')
+        f = open(f'static/emulated_database/companies_by_location/by_name/{county}.json', 'r')
         companies_by_name = json.loads(f.read())
     except Exception as e:
         companies_by_name = {}
@@ -80,7 +80,7 @@ def companies_by_county(county, county_geohash=None):
             return
 
     try: 
-        f = open(f'static/companies_by_location/by_geohash/{county_geohash[:4]}.json', 'r')
+        f = open(f'static/emulated_database/companies_by_location/by_geohash/{county_geohash[:4]}.json', 'r')
         companies_by_geohash = json.loads(f.read())
     except Exception as e:
         companies_by_geohash = {}
