@@ -68,7 +68,33 @@ def counties_by_distric(request):
 def companies_by_location(request):
 
     param_keys = request.GET.keys()
+    
 
+    if 'county' in param_keys:
+
+        county = request.GET['county']
+
+        f = open(f'static/companies_by_location/by_name/{county}.json', 'r')
+        companies_by_name = json.loads(f.read())
+
+        f = open('static/auxiliar/counties_geohashes.json', 'r')
+        geohashes = json.loads(f.read())
+        county_geohash = geohashes[county]
+
+        f = open(f'static/companies_by_location/by_geohash/{county_geohash[:4]}.json', 'r')
+        companies_by_geohash = json.loads(f.read())
+
+
+        all_companies = {company:companies_by_name[company] for company in companies_by_name}
+        for company in companies_by_geohash:
+            all_companies[company] = companies_by_geohash[company]
+
+        return Response({"state": "success", "county": county, "companies": all_companies})
+
+
+
+            
+"""
     # validating parameters
     if 'geohash' not in param_keys:
         return Response({"state": "error", "error": "you must send a geohash"}, status=HTTP_400_BAD_REQUEST)
@@ -85,3 +111,26 @@ def companies_by_location(request):
 
     except Exception as e:
         return Response({"state": "error", "error": e}, status=HTTP_200_OK)
+
+
+@api_view(["GET"])
+def companies_by_location_name(request):
+
+    param_keys = request.GET.keys()
+    
+    # validating parameters
+    if 'district' not in param_keys and 'county' not in param_keys:
+        return Response({"state": "error", "error": "you must send a district or county name!"}, status=HTTP_400_BAD_REQUEST)
+
+    county = request.GET['location']
+
+    try:
+        companies = open(f'static/counties/by_name/{county}.json', 'r')
+        companies = json.loads(companies.read())
+
+        return Response({"state": "success", "data": companies}, status=HTTP_200_OK)
+    
+    except Exception as e:
+        return Response({"state": "error", "error": "Location not found!"}, status=HTTP_200_OK)
+
+"""
