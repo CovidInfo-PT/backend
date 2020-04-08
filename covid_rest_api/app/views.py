@@ -10,13 +10,23 @@ from rest_framework.status import (
 )
 
 
+# OPEN ALL STATIC FILES IN MEMORY
+with open('static/auxiliar/districts.json', 'r') as f:
+    districts = json.loads(f.read())
+
+with open('static/auxiliar/counties_by_district_geohashed.json', 'r') as f:
+    counties = json.loads(f.read())
+
+with open('static/auxiliar/counties_geohashes.json', 'r') as f:
+    counties_geohashes = json.loads(f.read())
+
+with open('static/auxiliar/geohashes.json', 'r') as f:
+    geohashes = json.loads(f.read())
+
 # 'method' can be used to customize a single HTTP method of a view
 @api_view(["GET"])
 def all_districts(request):
     try:
-        # open the file
-        districts_file = open('static/auxiliar/districts.json', 'r')
-        districts = json.loads(districts_file.read())
         return Response({"state":"success", "districts": districts}, status=HTTP_200_OK)
 
     except Exception as e:
@@ -26,9 +36,6 @@ def all_districts(request):
 @api_view(["GET"])
 def all_counties(request):
     try:
-        # open the file
-        counties_file = open('static/auxiliar/counties_by_district_geohashed.json', 'r')
-        counties = json.loads(counties_file.read())
         return Response({"state":"success", "counties": counties}, status=HTTP_200_OK)
 
     except Exception as e:
@@ -48,9 +55,6 @@ def counties_by_distric(request):
     district = request.GET['district']
 
     try:
-        # open the file
-        counties_file = open('static/auxiliar/counties_by_district_geohashed.json', 'r')
-        counties = json.loads(counties_file.read())
 
         elected_counties = []
         if district in counties:
@@ -73,9 +77,7 @@ def companies_by_county(county, county_geohash=None):
 
     if county_geohash is None:
         try:
-            f = open('static/auxiliar/counties_geohashes.json', 'r')
-            geohashes = json.loads(f.read())
-            county_geohash = geohashes[county]
+            county_geohash = counties_geohashes[county]
         except Exception as e:
             return
 
@@ -117,8 +119,7 @@ def companies_by_location(request):
         try: 
             district = request.GET['district']
             
-            f = open(f'static/auxiliar/counties_by_district_geohashed.json', 'r')
-            districts = json.loads(f.read())
+            districts = counties
 
             all_companies = {}
 
@@ -135,9 +136,6 @@ def companies_by_location(request):
 
         try:
             geohash = request.GET['geohash']
-            
-            f = open('static/auxiliar/geohashes.json', 'r')
-            geohashes = json.loads(f.read())
             
             county = geohashes[geohash]['county']
             all_companies = companies_by_county(county, geohash)
@@ -157,6 +155,6 @@ def categories(request):
     # in memory to avoid disk access
     categories = sorted(['Correio', 'Saúde', 'Farmácias', 'Restaurantes', 'Mercados', 'Padarias', 'Talhos', 'Peixarias', 'Bombas de Combustível', 'Gás', 'Oficinas', 'Bancos', 'Serviços Administrativos', 'Telecomunicações', 'Veterinários', 'Recolha de Lixo'])
     categories.append('Outros')
-    
+
     return Response({"state": "success", "categories": categories}, status=HTTP_200_OK)
 
