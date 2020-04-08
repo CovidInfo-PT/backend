@@ -3,6 +3,7 @@ import requests
 import re
 import json
 import csv
+import logging
 from constants import company_validation_constants
 
 class CompanyValidator():
@@ -13,7 +14,19 @@ class CompanyValidator():
     IMGUR_UPLOAD_API_CAL = "https://api.imgur.com/3/upload"
     
 
+    def __init__(self, class_logger_path):
+       # set local logging mechanism
+        self.logger = logging.getLogger('CompanyValidator')
+        hdlr = logging.FileHandler(class_logger_path)
+        formatter = logging.Formatter('[%(asctime)s | %(levelname)s] %(message)s', datefmt='%d/%m/%Y %H:%M:%S')
+        hdlr.setFormatter(formatter)
+        self.logger.addHandler(hdlr) 
+        self.logger.setLevel(logging.INFO)
+
+
     def process_company(self, csv_list):
+        self.logger.log(logging.INFO, 'Started to process new company')
+        
         # create errors array
         self.errors = []
         # create dic to hold information
@@ -25,6 +38,9 @@ class CompanyValidator():
 
         # validate fields and create company dic
 
+         # add name
+        self.company_dic["name"] = self.company_name
+        self.logger.log(logging.INFO, 'Company Name: {}'.format(self.company_name))
         # add address
         self.add_valid_address()
         # add the complete address - no validation here!
@@ -41,8 +57,6 @@ class CompanyValidator():
         self.add_valid_social_media()
         # add valid email
         self.add_valid_email()
-        # add name
-        self.company_dic["name"] = self.company_name
         # add website
         self.add_valid_website()
         # add notes
@@ -60,6 +74,7 @@ class CompanyValidator():
         # add id - for now -1
         self.company_dic["id"] = -1
 
+        self.logger.log(logging.INFO, 'Finished processing a company')
         return self.errors, self.company_dic 
 
 
@@ -86,9 +101,11 @@ class CompanyValidator():
             self.twitter = csv_list[16]
             self.website = csv_list[17]
             self.schedules = [csv_list[18], csv_list[19], csv_list[20], csv_list[21], csv_list[22], csv_list[23], csv_list[24]]
+            self.logger.log(logging.INFO, "Could parse the csv line")
             return True
         except:
             self.errors.append("Couldn't parse the csv line - list index out of range")
+            self.logger.log(logging.INFO, "Couldn't parse the csv line - list index out of range")
             return False
 
 
@@ -98,13 +115,16 @@ class CompanyValidator():
     def add_valid_website(self):
         if self.website.strip()=="":
             self.company_dic["website"] = ""
+            self.logger.log(logging.INFO, "There is no website for this company")
             return 
 
         try:
             website_url = requests.get(self.website).url
             self.company_dic["website"] = website_url
+            self.logger.log(logging.INFO, "Could obtain the website for this company")
         except:
             self.errors.append("Invalid website!")
+            self.logger.log(logging.INFO, "Invalid website for this company")
 
 
     """
@@ -115,8 +135,10 @@ class CompanyValidator():
             try:
                 if re.search(self.email_regex, self.email).group() != self.email: 
                     self.errors.append("Invalid email!")
+                    self.logger.log(logging.INFO, "Invalid email for this company")
             except:
                 self.errors.append("Invalid email!")
+                self.logger.log(logging.INFO, "Invalid email for this company")
 
 
             
@@ -129,6 +151,7 @@ class CompanyValidator():
             self.company_dic["home_delivery"] = True
         else:
             self.company_dic["home_delivery"] = False
+        self.logger.log(logging.INFO, "Added home delivery for this company")
 
 
     """
@@ -147,6 +170,7 @@ class CompanyValidator():
         social_media["instagram"] = self.instagram
         social_media["twitter"] = self.twitter
         self.company_dic["social"] = social_media
+        self.logger.log(logging.INFO, "Added spcial networks for this company")
 
 
     """
@@ -156,9 +180,12 @@ class CompanyValidator():
         # check if coordinates in portugal
         if not (36.839377 < latitude < 42.117961):
              self.errors.append("Latitude is outside Portugal!")
+             self.logger.log(logging.INFO, "Latitude is outside Portugal!")
         if not ( -10.170561 < longitude < -5.699126):
             self.errors.append("Longitude is outside Portugal!")
+            self.logger.log(logging.INFO, "Longitude is outside Portugal!")
 
+        self.logger.log(logging.INFO, "Valid coordinates for this company")
         return geohash.encode(latitude, longitude)
 
 
@@ -176,9 +203,11 @@ class CompanyValidator():
             splitted_url = complete_url.strip().split("@")[1].split(",")
             latitude = splitted_url[0]
             longitude = splitted_url[1]
+            self.logger.log(logging.INFO, "Could get the coordinates from the gmaps_url")
             return float(latitude), float(longitude)
         except:
             self.errors.append("Couldn't decode gmaps url")
+            self.logger.log(logging.INFO, "Couldn't decode gmaps url")
             return -1, -1
 
     
@@ -195,16 +224,20 @@ class CompanyValidator():
     Verifies the district, county and parish 
     """
     def add_valid_address(self):
-        if self.district not in company_validation_constants.valid_districts:  
-            self.errors.append("Invalid district!")
-        if self.county not in company_validation_constants.valid_counties_by_district[self.district]: 
-            self.errors.append("Invalid county or outside the district")
-        if self.parish not in company_validation_constants.valid_parishes_by_county[self.county]: 
-            self.errors.append("Invalid parish!")
+        try:
+            if self.district not in company_validation_constants.valid_districts:  
+                self.errors.append("Invalid district!")
+            if self.county not in company_validation_constants.valid_counties_by_district[self.district]: 
+                self.errors.append("Invalid county or outside the district")
+            if self.parish not in company_validation_constants.valid_parishes_by_county[self.county]: 
+                self.errors.append("Invalid parish!")
 
-        self.company_dic["district"] = self.district
-        self.company_dic["county"] = self.county
-        self.company_dic["parish"] = self.parish
+            self.company_dic["district"] = self.district
+            self.company_dic["county"] = self.county
+            self.company_dic["parish"] = self.parish
+
+        except:
+            i=1
 
 
     """
@@ -213,6 +246,7 @@ class CompanyValidator():
     def add_valid_schedules(self):
         if len(self.schedules) != 7:
             self.errors.append("Invalid number of days in schedule!")
+            self.logger.log(logging.INFO, "Invalid number of days in schedule!")
         
         self.company_dic["schedules"] = {}
 
@@ -222,6 +256,7 @@ class CompanyValidator():
                 self.company_dic["schedules"][day] = schedule
         except:
             self.errors.append("Error parsing schedules!")
+            self.logger.log(logging.INFO, "Error parsing schedules!")
 
 
     """ 
@@ -233,6 +268,7 @@ class CompanyValidator():
             # error threatment
             if day not in company_validation_constants.valid_weekdays: 
                 self.errors.append("Invalid week day for {}!".format(day))
+                self.logger.log(logging.INFO, "Invalid week day for {}!".format(day))
 
             # if no schedule for the day
             if schedules.strip() == "":
@@ -264,6 +300,7 @@ class CompanyValidator():
             return day, schedules_verified
         except:
             self.errors.append("Invalid hours for for {}!".format(day))
+            self.logger.log(logging.INFO, "Invalid hours for for {}!".format(day))
             return 'None', ["None"]
 
 
@@ -277,11 +314,14 @@ class CompanyValidator():
             cat = cat.strip()
             if cat not in company_validation_constants.valid_categories:
                 self.errors.append("Invalid category for {}!".format(cat))
+                self.logger.log(logging.INFO, "Invalid category for {}!".format(cat))
             else:
                 # exception for saúde
                 if cat == "Saúde (Clínica de Saúde,  Centro Saúde,  Dentista,  entre outros)":
                     cat = "Saúde"
                 self.company_dic["categories"].append(cat)
+
+        self.logger.log(logging.INFO, "Finished adding the companies for this company")
     
     
     """
@@ -294,11 +334,13 @@ class CompanyValidator():
         # if the company has no imgage
         if self.image_url_drive.strip() == '':
             self.company_dic["images"] = {"logo":"", "exterior":""}
+            self.logger.log(logging.INFO, "No images for this company")
             return
 
         # if link is incorrect
         if "drive.google.com" not in self.image_url_drive:
             self.errors.append("Ivalid url for image")
+            self.logger.log(logging.INFO, "Ivalid url for image")
             return
 
         # get the image from the google drive
@@ -313,6 +355,7 @@ class CompanyValidator():
                     m_bytes += (chunk)
         except Exception as e: 
             self.errors.append("unable to download image - {}!".format(e))
+            self.logger.log(logging.INFO, "unable to download image - {}!".format(e))
         
         # post the image on imgur
         try:
@@ -322,8 +365,11 @@ class CompanyValidator():
             # if upload resulted in an error
             if "error" in r.json()["data"]:
                 self.errors.append("Error on uploading image to imgur - {}!".format(r.json()["data"]["error"]))
+                self.logger.log(logging.INFO, "Error on uploading image to imgur - {}!".format(r.json()["data"]["error"]))
             # if all ok
             imgur_link_to_img = r.json()["data"]["link"]
             self.company_dic["images"] = {"logo":imgur_link_to_img, "exterior":""}
+            self.logger.log(logging.INFO, "Could upload the image to imgur. All ok")
         except:
             self.errors.append("unable to upload image to imgur!")
+            self.logger.log(logging.INFO, "unable to upload image to imgur!")

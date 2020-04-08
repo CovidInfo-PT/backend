@@ -1,7 +1,9 @@
 from gsheets.spreadsheet import SpreadSheet
 from form_validator import FormValidator
+from globalLog import GlobalLogger
 import configparser
 import argparse
+import logging
 import os
 
 
@@ -24,6 +26,11 @@ def load_configs(config_path):
         properties_dic["counties_by_geohash_dir_path"] = config.get('DataFiles', 'counties_by_geohash_dir_path')
         properties_dic["counties_by_name_dir_path"] = config.get('DataFiles', 'counties_by_name_dir_path')
         properties_dic["bytes_per_county_geohassh"] = int(config.get('DataFiles', 'bytes_per_county_geohassh'))
+
+        properties_dic["global_logger_path"] = config.get('Logger', 'global_logger_path')
+        properties_dic["form_validator_logger_path"] = config.get('Logger', 'form_validator_logger_path')
+        properties_dic["company_validator_logger_path"] = config.get('Logger', 'company_validator_logger_path')
+
     except:
         error = True
     return error, properties_dic
@@ -64,6 +71,11 @@ if __name__ == '__main__':
         print("[Error] Error parsing the properties file")
         exit(1)
 
+    # set global logger mechanism
+    globalLogger = GlobalLogger(properties["global_logger_path"])
+
+    logging.getLogger('UpdateCompany')
+
     # create object to access the wanted spreadsheet
     spreadSheet = SpreadSheet()
 
@@ -82,7 +94,7 @@ if __name__ == '__main__':
     companies_rows = filter(lambda row_tuple: row_tuple[1][0].strip() != '', companies_rows[1:])
 
     # delegate to the form validator to validate the data
-    form_validator = FormValidator(spreadSheet, properties['error_column'], properties['validated_checkbox_column'], companies_rows, properties["bytes_per_county_geohassh"], properties["added_companies_path"], properties["counties_by_geohash_dir_path"], properties["counties_by_name_dir_path"])
+    form_validator = FormValidator(properties["form_validator_logger_path"], properties["company_validator_logger_path"], globalLogger, spreadSheet,  properties['error_column'], properties['validated_checkbox_column'], companies_rows, properties["bytes_per_county_geohassh"], properties["added_companies_path"], properties["counties_by_geohash_dir_path"], properties["counties_by_name_dir_path"])
     form_validator.process_form()
 
 
