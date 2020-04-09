@@ -109,3 +109,34 @@ class Geocoding:
             
             # if Google Maps has not been redirected yet, wait for 5 seconds
             time.sleep(5)
+
+
+    """
+    This main method searchs for a given address on Google Maps and returns its gmaps url.
+
+    @param address: anything that could be searched on Google Maps
+    """
+    def gmaps_url_from_address(self, address):
+        
+        self._browser.set_window_size(1120,550)
+        print(f"Searching for {address}")
+
+        # opens google maps page with Selenium
+        self.get_page()
+
+        # gets the search box
+        self.get_element_by_id()
+
+        # searches for the given address on Google Maps, clicking on RETURN
+        self._elem.send_keys(address + Keys.RETURN)
+        
+        # this loop is necessary due to Google Maps redirecting
+        tries = 0
+        while tries < 6:
+            tries += 1
+            
+            if self._browser.current_url != self._url:
+                return self._browser.current_url
+            
+            # if Google Maps has not been redirected yet, wait for 5 seconds
+            time.sleep(5)

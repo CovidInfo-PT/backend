@@ -5,11 +5,12 @@ import hashlib
 import logging
 from pathlib import Path
 from company_validator import CompanyValidator
-
+from geocoding.geocoding import Geocoding
 
 class FormValidator:
 
     class_string_identifier = 'FormValidator'
+    
 
     def __init__(self, class_logger_path, companies_logger_path, global_logger, google_sheet, error_col, validated_checkbox_column, row_tuples_list, geohash_county_bytes, added_companies_filename, counties_by_geohash_dirname, counties_by_name_dirname):
         self.class_logger_path = class_logger_path
@@ -34,6 +35,8 @@ class FormValidator:
         self.logger.addHandler(hdlr) 
         self.logger.setLevel(logging.INFO)
 
+        # create mechanismo to get the google url from address
+        self.gmapsUrlGetter = Geocoding()
 
 
     """
@@ -46,7 +49,7 @@ class FormValidator:
         self.added_companies_lst = self.get_added_companies_hashes()
 
         # Create a company validator
-        company_validator = CompanyValidator(self.companies_logger_path)
+        company_validator = CompanyValidator(self.companies_logger_path, self.gmapsUrlGetter)
         self.logger.log(logging.INFO, 'Created company validator')
         self.global_logger.log(logging.INFO, 'Created company validator', self.class_string_identifier)
 

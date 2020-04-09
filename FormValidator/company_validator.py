@@ -6,6 +6,7 @@ import csv
 import logging
 from constants import company_validation_constants
 
+
 class CompanyValidator():
 
     hours_regex = r"[0-9]{1,2}:[0-9]{1,2}"
@@ -14,7 +15,9 @@ class CompanyValidator():
     IMGUR_UPLOAD_API_CAL = "https://api.imgur.com/3/upload"
     
 
-    def __init__(self, class_logger_path):
+    def __init__(self, class_logger_path, gmapsUrlGetter):
+        self.gmapsUrlGetter = gmapsUrlGetter
+
        # set local logging mechanism
         self.logger = logging.getLogger('CompanyValidator')
         hdlr = logging.FileHandler(class_logger_path)
@@ -215,9 +218,12 @@ class CompanyValidator():
     """
     Get the google maps url to a certain location, given the addres of the company
     """
-    # TODO -> inserir codigo do mendes aqui!
     def get_gmaps_url_from_address(self):
-        self.gmaps_url = 'https://goo.gl/maps/XYpxDQhaZwMhFcd37'
+        tmp_gmaps_url = self.gmapsUrlGetter.gmaps_url_from_address(self.complete_address)
+        if tmp_gmaps_url != None:
+            self.gmaps_url = tmp_gmaps_url
+        else:
+            self.errors.append("Couldn't get Google maps url, from the complete address")
         
 
     """
