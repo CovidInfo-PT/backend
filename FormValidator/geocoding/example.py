@@ -22,6 +22,6 @@ if __name__ == '__main__':
         # compute geohash
         geohash = geocoder.compute_geohash(coordinates[0], coordinates[1])
         
-        print(f"Address: {a}, Coordinates: {coordinates}, Geohash: {geohash}")
+        print(f"Address: {a}, \nCoordinates: {coordinates}, Geohash: {geohash}\n\n")
     
     geocoder.close_browser()
