@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6ee6d57-23a2-4cec-bb8e-dc69034540fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Data/Counties/ez4j.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/Counties/ez4m.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/added_companies_hashes" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/added_companies_hashes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FormValidator/teste.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FormValidator/teste_clean.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FormValidator/teste_v2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FormValidator/teste_v3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Data/Counties/by_geohash/ez4m.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Data/Counties/by_geohash/ez4q.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Data/Counties/by_name/Carregal do Sal.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Data/added_companies_hashes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FormValidator/aux/list_parishes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../FormValidator/aux/list_parishes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FormValidator/aux/outputs/counties.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FormValidator/aux/outputs/counties.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FormValidator/aux/outputs/districts.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FormValidator/aux/outputs/districts.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FormValidator/aux/outputs/parishes.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FormValidator/aux/outputs/parishes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,13 +19,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/covid_rest_api/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="126" column="22" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
+            <state relative-caret-position="1905">
+              <caret line="127" column="22" selection-start-line="127" selection-start-column="22" selection-end-line="127" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -31,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="539">
+              <caret line="100" column="4" lean-forward="true" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -72,10 +77,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="706" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-2" />
     <option name="y" value="-1057" />
-    <option name="width" value="960" />
+    <option name="width" value="1668" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -84,7 +89,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -102,10 +106,32 @@
               <item name="covid_rest_api" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="covid_rest_api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="covid_rest_api" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="emulated_database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="covid_rest_api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="covid_rest_api" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="emulated_database" type="462c0819:PsiDirectoryNode" />
+              <item name="companies_by_location" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="covid_rest_api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="covid_rest_api" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="emulated_database" type="462c0819:PsiDirectoryNode" />
+              <item name="companies_by_location" type="462c0819:PsiDirectoryNode" />
+              <item name="by_geohash" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -113,6 +139,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -166,16 +193,18 @@
       <workItem from="1586116599936" duration="117000" />
       <workItem from="1586123871611" duration="180000" />
       <workItem from="1586284175058" duration="2467000" />
+      <workItem from="1586439367643" duration="830000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6215000" />
+    <option name="totallyTimeSpent" value="7045000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="706" y="-1057" width="960" height="1057" extended-state="0" />
+    <frame x="-254" y="-1057" width="1920" height="1057" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2962963" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14802982" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -204,23 +233,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/covid_rest_api/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="126" column="22" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/covid_rest_api/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="43" column="66" selection-start-line="43" selection-start-column="66" selection-end-line="43" selection-end-column="66" />
-          <folding>
-            <element signature="e#638#670#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../FormValidator/aux/outputs/districts.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -242,10 +254,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/covid_rest_api/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1905">
+          <caret line="127" column="22" selection-start-line="127" selection-start-column="22" selection-end-line="127" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/covid_rest_api/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="43" column="66" selection-start-line="43" selection-start-column="66" selection-end-line="43" selection-end-column="66" />
+          <folding>
+            <element signature="e#638#670#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="539">
+          <caret line="100" column="4" lean-forward="true" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
