@@ -158,7 +158,9 @@ if __name__ == '__main__':
 
         # first, create a backup
         backup_job = BackupJob(properties["backups_output_dir"], properties["dirs_to_backup"], properties["s3_backup_bucket"])
-        backup_job.make_backups()
+        if not backup_job.make_backups():
+            globalLogger.log(logging.INFO, 'Error on backing up the information'.format(properties["period_minutes"]), "DEPLOY")
+            break
 
         # create object to access the wanted spreadsheet
         spreadSheet = SpreadSheet(credentials=properties["googlesheets_credentials_file_path"])
