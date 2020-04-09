@@ -91,7 +91,8 @@ class CompanyValidator():
             self.county = csv_list[2]
             self.parish = csv_list[3]
             self.company_name = csv_list[4]
-            self.categories = csv_list[5].replace('"', '').split(",")
+            # stupid replace but easier way without changing a lot of code
+            self.categories = csv_list[5].replace("Saúde (Clínica de Saúde, Centro Saúde, Dentista, entre outros)", "Saúde").replace('"', '').split(",")
             self.contacts = [csv_list[6], csv_list[7]]
             self.email = csv_list[8]
             self.complete_address = csv_list[9]
@@ -322,9 +323,6 @@ class CompanyValidator():
                 self.errors.append("Invalid category for {}!".format(cat))
                 self.logger.log(logging.INFO, "Invalid category for {}!".format(cat))
             else:
-                # exception for saúde
-                if cat == "Saúde (Clínica de Saúde,  Centro Saúde,  Dentista,  entre outros)":
-                    cat = "Saúde"
                 self.company_dic["categories"].append(cat)
 
         self.logger.log(logging.INFO, "Finished adding the companies for this company")

@@ -98,6 +98,8 @@ class FormValidator:
         self.global_logger.log(logging.INFO, 'There were {} companies that were already in the database and were inserted {} new ones'.format(already_inserted, added), self.class_string_identifier)
         self.global_logger.log(logging.INFO, 'There were {} companies with errors'.format(with_error), self.class_string_identifier)
 
+        self.gmapsUrlGetter.close_browser()
+
 
     """
     Given the company dic and the company hash, this function adds the company to the 'database'

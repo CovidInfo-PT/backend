@@ -17,4 +17,4 @@ valid_counties_by_district = {'Aveiro': {'Ílhavo', 'Castelo de Paiva', 'Murtosa
 valid_weekdays = ["segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado", "domingo"]
 
 
-valid_categories = ['Saúde (Clínica de Saúde,  Centro Saúde,  Dentista,  entre outros)', 'Farmácia', 'Restaurante', 'Mercado', 'Padaria', 'Talho', 'Peixaria', 'Bomba de Combustível', 'Gás', 'Oficina', 'Banco', 'Serviço Administrativo', 'Telecomunicações', 'Veterinário', 'Outra opção (user input)', 'Recolha de Lixo']
+valid_categories = ['Saúde', 'Farmácia', 'Restaurante', 'Mercado', 'Padaria', 'Talho', 'Peixaria', 'Bomba de Combustível', 'Gás', 'Oficina', 'Banco', 'Serviço Administrativo', 'Telecomunicações', 'Veterinário', 'Recolha de Lixo']
