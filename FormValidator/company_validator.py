@@ -1,10 +1,15 @@
+# add base directory to the path from where we can import
+from sys import path
+from os import getcwd
+path.append(getcwd() + "/..")
+
 import geohash
 import requests
 import re
 import json
 import csv
 import logging
-from constants import company_validation_constants
+from FormValidator.constants import company_validation_constants
 
 
 class CompanyValidator():
