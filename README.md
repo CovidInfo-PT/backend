@@ -644,6 +644,20 @@ GET /companies_by_location?geohash=ez4q1bsmsj7w
 }
 ```
 
+### Access to emulated database
+The emulated database dir. containing the info needed by the api can be outside the static folder.
+Once the api is started, if there is a environment variable named `EMULATED_DATABASE_DIR`, the rest api will use this directory as the base of all the companies' files.
+
+```python
+# CHECK IF EMULATED DATABASE IS IN OTHER DIR
+tmp_db_dir = os.getenv('EMULATED_DATABASE_DIR')
+
+
+EMULATED_DATABASE_DIR = tmp_db_dir if (tmp_db_dir != None and os.path.isdir(tmp_db_dir)) else 'static/emulated_database/'
+print(f'Will be using the emulated database at {EMULATED_DATABASE_DIR} !')
+```
+
+
 ## Backups
 
 Right now, the backups are create by a python cron job. This jobs creates a zip of all the files we want to back up and sends it to AWS S3 Buckets. This zip contains the timestamp representing the moment when this backup was created.
@@ -880,3 +894,4 @@ server {
    	gunzip on;
 }
 ```
+
