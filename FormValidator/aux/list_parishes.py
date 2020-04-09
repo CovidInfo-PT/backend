@@ -1,19 +1,22 @@
 import json
 import requests
 import geohash
+from sys import path
+from os import getcwd
+path.append(getcwd() + "/..")
+from geocoding.geocoding import Geocoding
 
+def county_to_geohash(geocoder, county, district):
+    address = "{}, {}, Portugal".format(county, district)
+    coordinates = geocoder.search(address)
+    # compute geohash
+    geohash = geocoder.compute_geohash(coordinates[0], coordinates[1])
+    return geohash
 
-def county_to_geohash(county, district):
-    query = "{},{},Portugal".format(county, district)
-    info = requests.get("https://nominatim.openstreetmap.org/search?q={}&format=json".format(query)).json()  
-    if len(info) == 0:
-        print("Couldn't find {}".format(query)) 
-        return "-1" 
-    latitude = float(info[0]["lat"])
-    longitude = float(info[0]["lon"])
-    return geohash.encode(latitude, longitude)
 
 f = open("datasets/freguesias-metadata.csv")
+
+    
 
 # ignore header
 f.readline()
@@ -45,16 +48,19 @@ for line in f:
         counties_by_district[district] = set([county])
 
 
+# open selenium geocoder
+geocoder = Geocoding()
 
 # generate geohashes for each county
 counties_by_district_geohashed ={}
 for d in counties_by_district:
     
-    counties_by_district_geohashed[d] = [[c, county_to_geohash(c, d)] for c in counties_by_district[d]]
+    counties_by_district_geohashed[d] = [[c, county_to_geohash(geocoder, c, d)] for c in counties_by_district[d]]
     print(d)
 
 
-print(counties_by_district_geohashed)
+# close browser of geocoder
+geocoder.close_browser()
 
 
 # convert sets to lists to dump to json files
@@ -95,7 +101,7 @@ counties_file.write(counties_json)
 counties_file.close()
 
 parishes_file = open("outputs/parishes.json", "w")
-parishes_file.write(districts_json)
+parishes_file.write(parishes_json)
 parishes_file.close()
 
 
