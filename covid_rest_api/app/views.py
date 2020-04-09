@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import json
-
+from pathlib import Path
+import os
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -8,6 +9,7 @@ from rest_framework.status import (
     HTTP_400_BAD_REQUEST,
     HTTP_200_OK,
 )
+
 
 
 # OPEN ALL STATIC FILES IN MEMORY
@@ -22,6 +24,16 @@ with open('static/auxiliar/counties_geohashes.json', 'r') as f:
 
 with open('static/auxiliar/geohashes.json', 'r') as f:
     geohashes = json.loads(f.read())
+
+
+# CHECK IF EMULATED DATABASE IS IN OTHER DIR
+tmp_db_dir = os.getenv('EMULATED_DATABASE_DIR')
+
+
+EMULATED_DATABASE_DIR = tmp_db_dir if (tmp_db_dir != None and os.path.isdir(tmp_db_dir)) else 'static/emulated_database/'
+print(f'Will be using the emulated database at {EMULATED_DATABASE_DIR} !')
+
+
 
 # 'method' can be used to customize a single HTTP method of a view
 @api_view(["GET"])
@@ -70,7 +82,7 @@ def counties_by_distric(request):
 def companies_by_county(county, county_geohash=None):
     
     try:
-        f = open(f'static/emulated_database/companies_by_location/by_name/{county}.json', 'r')
+        f = open(Path(EMULATED_DATABASE_DIR, f'companies_by_location/by_name/{county}.json'), 'r')
         companies_by_name = json.loads(f.read())
     except Exception as e:
         companies_by_name = {}
@@ -82,7 +94,7 @@ def companies_by_county(county, county_geohash=None):
             return
 
     try: 
-        f = open(f'static/emulated_database/companies_by_location/by_geohash/{county_geohash[:4]}.json', 'r')
+        f = open(Path(EMULATED_DATABASE_DIR, f'companies_by_location/by_geohash/{county_geohash[:4]}.json') , 'r')
         companies_by_geohash = json.loads(f.read())
     except Exception as e:
         companies_by_geohash = {}
