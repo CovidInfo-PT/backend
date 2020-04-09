@@ -8,6 +8,7 @@ import shutil
 
 
 
+
 class BackupJob():
 
     def __init__(self, backups_output_dir, dirs_to_backup, bucket_name):
@@ -50,7 +51,7 @@ class BackupJob():
 
     def upload_to_aws(self, local_file, bucket, s3_file=None):
         # create client
-        s3 = boto3.client('s3', aws_access_key_id=ACCESS_KEY, aws_secret_access_key=SECRET_KEY)
+        s3 = boto3.client('s3', aws_access_key_id=self.ACCESS_KEY, aws_secret_access_key=self.SECRET_KEY)
 
         # if no s3_file_name use the local file name
         if s3_file == None:
@@ -71,14 +72,16 @@ class BackupJob():
     def make_backups(self):
         try:
             for dir_to_be_backed_up in self.dirs_to_backup:
-
+                
                 # get the time of the backup
                 now = datetime.now()
                 dt_string = now.strftime("%d_%m_%Y_%H_%M_%S")
 
-                # set the name of the backup
-                backup_name = "backup-{}.zip".format(dt_string)
+                dir_to_be_backed_up_name = os.path.basename(dir_to_be_backed_up)
 
+                
+                # set the name of the backup
+                backup_name = "backup-{}-{}.zip".format(dir_to_be_backed_up_name,dt_string)
                 # zip the Data dir
                 zipf = zipfile.ZipFile(backup_name, 'w', zipfile.ZIP_DEFLATED)
                 self.zip_dir(dir_to_be_backed_up, zipf)
@@ -91,9 +94,9 @@ class BackupJob():
                 shutil.move(backup_name, self.backups_output_dir)
 
                 if not uploaded:
-                    print("ERROR")
-                    exit()
-
-                print("ALL GOOD!")
-        except:
-            print("ERROR!")
+                    print("ERROR - NOT UPLOADED")
+                    return False
+            return True
+        except Exception as e :
+            print("ERROR! - {}".format(e))
+ 
