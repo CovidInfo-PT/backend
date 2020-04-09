@@ -1,3 +1,8 @@
+# add base directory to the path from where we can import
+from sys import path
+from os import getcwd
+path.append(getcwd() + "/..")
+
 from os import path, listdir
 import csv
 import json
@@ -5,8 +10,8 @@ import hashlib
 import logging
 from pathlib import Path
 import datetime
-from company_validator import CompanyValidator
-from geocoding.geocoding import Geocoding
+from FormValidator.company_validator import CompanyValidator
+from FormValidator.geocoding.geocoding import Geocoding
 
 
 class FormValidator:
