@@ -4,15 +4,17 @@ import json
 import hashlib
 import logging
 from pathlib import Path
+import datetime
 from company_validator import CompanyValidator
 from geocoding.geocoding import Geocoding
+
 
 class FormValidator:
 
     class_string_identifier = 'FormValidator'
     
 
-    def __init__(self, class_logger_path, companies_logger_path, global_logger, google_sheet, error_col, validated_checkbox_column, row_tuples_list, geohash_county_bytes, added_companies_filename, counties_by_geohash_dirname, counties_by_name_dirname):
+    def __init__(self, class_logger_path, companies_logger_path, global_logger, google_sheet, error_col, validated_checkbox_column, timestamp_coords, row_tuples_list, geohash_county_bytes, added_companies_filename, counties_by_geohash_dirname, counties_by_name_dirname):
         self.class_logger_path = class_logger_path
         self.companies_logger_path = companies_logger_path
         self.global_logger = global_logger
@@ -20,6 +22,7 @@ class FormValidator:
         self.error_col = error_col
         self.validated_checkbox_column = validated_checkbox_column
         self.row_tuples_list = row_tuples_list
+        self.timestamp_coords = timestamp_coords
         self.geohash_county_bytes = geohash_county_bytes
         self.added_companies_filename = added_companies_filename
         self.counties_by_geohash_dirname = counties_by_geohash_dirname
@@ -57,6 +60,10 @@ class FormValidator:
         already_inserted = 0
         added = 0
         with_error = 0
+
+        # wite the timestamp of the last time the companies were processed to the google sheet
+        self.global_logger.log(logging.INFO, 'Updated the timestamp on the google sheet', self.class_string_identifier)
+        self.google_sheet.write_error(error=datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"), row=self.timestamp_coords[0], col=self.timestamp_coords[1])
 
         self.global_logger.log(logging.INFO, 'Iterating through all the form entries', self.class_string_identifier)
         for row in self.row_tuples_list:
