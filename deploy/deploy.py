@@ -55,11 +55,11 @@ def load_configs(config_path):
 
         # Check all files and dirs
         if not os.path.isfile(properties_dic["added_companies_path"]):
-            print("Invalid googlesheets_credentials_file_path")
+            print("Invalid added_companies_path")
             error = True
 
         if not os.path.isfile(properties_dic["googlesheets_credentials_file_path"]):
-            print("Invalid added_companies_path")
+            print("Invalid googlesheets_credentials_file_path")
             error = True
 
         if not os.path.isdir(properties_dic["counties_by_geohash_dir_path"]):
