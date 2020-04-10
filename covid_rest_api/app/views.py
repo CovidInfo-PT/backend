@@ -179,7 +179,7 @@ def companies_by_location(request):
 def categories(request):
 
     # in memory to avoid disk access
-    categories = sorted(['Correio', 'Saúde', 'Farmácias', 'Restaurantes', 'Mercados', 'Padarias', 'Talhos', 'Peixarias', 'Bombas de Combustível', 'Gás', 'Oficinas', 'Bancos', 'Serviços Administrativos', 'Telecomunicações', 'Veterinários', 'Recolha de Lixo'])
+    categories = sorted(['Lavandaria', 'Café','Correio', 'Saúde', 'Farmácias', 'Restaurantes', 'Mercados', 'Padarias', 'Talhos', 'Peixarias', 'Bombas de Combustível', 'Gás', 'Oficinas', 'Bancos', 'Serviços Administrativos', 'Telecomunicações', 'Veterinários', 'Recolha de Lixo'])
     categories.append('Outros')
 
     return Response({"state": "success", "categories": categories}, status=HTTP_200_OK)
