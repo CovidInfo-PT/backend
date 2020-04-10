@@ -36,11 +36,11 @@ print(f'Will be using the emulated database at {EMULATED_DATABASE_DIR} !')
 
 
 # CACHE-CONTROL SETTINGS
-
 CACHE_CONTROL = {
     'public': True,
-    'max_age': 24*60*60, # 1 day in seconds
-    's_maxage': 24*60*60
+    #  HOURS * MINUTES * SECONDS
+    'max_age': 12*60*60, 
+    's_maxage': 12*60*60
 }
 
 
