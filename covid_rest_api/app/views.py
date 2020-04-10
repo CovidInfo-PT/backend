@@ -10,6 +10,7 @@ from rest_framework.status import (
     HTTP_200_OK,
 )
 
+from django.views.decorators.cache import cache_control
 
 
 # OPEN ALL STATIC FILES IN MEMORY
@@ -34,9 +35,18 @@ EMULATED_DATABASE_DIR = tmp_db_dir if (tmp_db_dir != None and os.path.isdir(tmp_
 print(f'Will be using the emulated database at {EMULATED_DATABASE_DIR} !')
 
 
+# CACHE-CONTROL SETTINGS
+
+CACHE_CONTROL = {
+    'public': True,
+    'max_age': 24*60*60, # 1 day in seconds
+    's_maxage': 24*60*60
+}
+
 
 # 'method' can be used to customize a single HTTP method of a view
 @api_view(["GET"])
+@cache_control(public=CACHE_CONTROL['public'],  max_age=CACHE_CONTROL['max_age'], s_maxage=CACHE_CONTROL['s_maxage'])
 def all_districts(request):
     try:
         return Response({"state":"success", "districts": districts}, status=HTTP_200_OK)
@@ -46,15 +56,17 @@ def all_districts(request):
 
 
 @api_view(["GET"])
+@cache_control(public=CACHE_CONTROL['public'],  max_age=CACHE_CONTROL['max_age'], s_maxage=CACHE_CONTROL['s_maxage'])
 def all_counties(request):
     try:
-        return Response({"state":"success", "counties": counties}, status=HTTP_200_OK)
+        return Response({"state":"success", "counties": counties}, status=HTTP_200_OK, )
 
     except Exception as e:
         return Response({"state": "error", "error": e}, status=HTTP_400_BAD_REQUEST)
 
 
 @api_view(["GET"])
+@cache_control(public=CACHE_CONTROL['public'],  max_age=CACHE_CONTROL['max_age'], s_maxage=CACHE_CONTROL['s_maxage'])
 def counties_by_distric(request):
 
     param_keys = request.GET.keys()
@@ -106,6 +118,7 @@ def companies_by_county(county, county_geohash=None):
     return all_companies
 
 @api_view(["GET"])
+@cache_control(public=CACHE_CONTROL['public'],  max_age=CACHE_CONTROL['max_age'], s_maxage=CACHE_CONTROL['s_maxage'])
 def companies_by_location(request):
 
     param_keys = request.GET.keys()
@@ -162,6 +175,7 @@ def companies_by_location(request):
 
 
 @api_view(["GET"])
+@cache_control(public=CACHE_CONTROL['public'],  max_age=CACHE_CONTROL['max_age'], s_maxage=CACHE_CONTROL['s_maxage'])
 def categories(request):
 
     # in memory to avoid disk access
