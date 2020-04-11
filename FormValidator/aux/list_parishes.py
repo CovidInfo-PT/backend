@@ -51,6 +51,7 @@ for line in f:
 # open selenium geocoder
 geocoder = Geocoding()
 
+'''
 # generate geohashes for each county
 counties_by_district_geohashed ={}
 for d in counties_by_district:
@@ -61,7 +62,7 @@ for d in counties_by_district:
 
 # close browser of geocoder
 geocoder.close_browser()
-
+'''
 
 # convert sets to lists to dump to json files
 for d in counties_by_district:
@@ -73,21 +74,23 @@ for c in parishes_by_county:
 # to json
 counties_by_district_json = json.dumps(counties_by_district, ensure_ascii=False).encode('utf8').decode("utf8")
 parishes_by_county_json = json.dumps(parishes_by_county, ensure_ascii=False).encode('utf8').decode("utf8")
+'''
 counties_by_district_geohashed_json = json.dumps(counties_by_district_geohashed, ensure_ascii=False).encode('utf8').decode("utf8")
+'''
 parishes_json = json.dumps(list(parishes), ensure_ascii=False).encode('utf8').decode("utf8")
 counties_json = json.dumps(list(counties), ensure_ascii=False).encode('utf8').decode("utf8")
-districts_json = json.dumps(list(districts), ensure_ascii=False).encode('utf8').decode("utf8")
+districts_json = json.dumps(sorted(list(districts)), ensure_ascii=False).encode('utf8').decode("utf8")
 
 
 # save to files
 counties_by_district_file = open("outputs/counties_by_district.json", "w")
 counties_by_district_file.write(counties_by_district_json)
 counties_by_district_file.close()
-
+'''
 counties_by_district_geohashed_file = open("outputs/counties_by_district_geohashed_not_completed.json", "w")
 counties_by_district_geohashed_file.write(counties_by_district_geohashed_json)  
 counties_by_district_geohashed_file.close()
-
+'''
 parishes_by_county_file = open("outputs/parishes_by_county.json", "w")
 parishes_by_county_file.write(parishes_by_county_json)
 parishes_by_county_file.close()
