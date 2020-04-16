@@ -26,6 +26,9 @@ with open('static/auxiliar/counties_geohashes.json', 'r') as f:
 with open('static/auxiliar/geohashes.json', 'r') as f:
     geohashes = json.loads(f.read())
 
+with open('static/auxiliar/categories.json', 'r') as f:
+    all_categories = json.loads(f.read())
+
 
 # CHECK IF EMULATED DATABASE IS IN OTHER DIR
 tmp_db_dir = os.getenv('EMULATED_DATABASE_DIR')
@@ -178,9 +181,5 @@ def companies_by_location(request):
 @cache_control(public=CACHE_CONTROL['public'],  max_age=CACHE_CONTROL['max_age'], s_maxage=CACHE_CONTROL['s_maxage'])
 def categories(request):
 
-    # in memory to avoid disk access
-    categories = sorted(['Lavandaria', 'Café','Correio', 'Saúde', 'Farmácias', 'Restaurantes', 'Mercados', 'Padarias', 'Talhos', 'Peixarias', 'Bombas de Combustível', 'Gás', 'Oficinas', 'Bancos', 'Serviços Administrativos', 'Telecomunicações', 'Veterinários', 'Recolha de Lixo'])
-    categories.append('Outros')
-
-    return Response({"state": "success", "categories": categories}, status=HTTP_200_OK)
+    return Response({"state": "success", "categories": sorted(all_categories, key=lambda x:x['category'])}, status=HTTP_200_OK)
 
