@@ -1,0 +1,18 @@
+[
+    {"category": "Saúde", "display": "Saúde"},
+    {"category": "Farmácia", "display": "Farmácias"},
+    {"category": "Restaurante", "display": "Restaurantes"},
+    {"category": "Mercado", "display": "Mercados"},
+    {"category": "Padaria", "display": "Padarias"},
+    {"category": "Talho", "display": "Talhos"},
+    {"category": "Bomba de Combustível", "display": "Bombas de Combustível"},
+    {"category": "Gás", "display": "Gás"},
+    {"category": "Oficina", "display": "Oficinas"},
+    {"category": "Banco", "display": "Bancos"},
+    {"category": "Serviço Administrativo", "display": "Serviços Administrativos"},
+    {"category": "Telecomunicações", "display": "Telecomunicações"},
+    {"category": "Veterinário", "display": "Veterinários"},
+    {"category": "Recolha de Lixo", "display": "Recolha de Lixo"},
+    {"category": "Café", "display": "Cafés"},
+    {"category": "Lavandaria", "display": "Lavandarias"}
+]
