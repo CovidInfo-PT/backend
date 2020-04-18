@@ -1,1233 +1,1233 @@
 {
-    "ez1zervsvt2j": {
-        "district": "Aveiro",
-        "county": "Murtosa"
-    },
-    "ez3b75y269m2": {
-        "district": "Aveiro",
-        "county": "Ovar"
-    },
-    "ez3bvd5rv6u7": {
-        "district": "Aveiro",
-        "county": "Santa Maria da Feira"
-    },
-    "ez1vxc03u99j": {
-        "district": "Aveiro",
-        "county": "Mealhada"
-    },
-    "ez60693wcgd8": {
-        "district": "Aveiro",
-        "county": "Vale de Cambra"
-    },
-    "ez1y6jmtk6p1": {
-        "district": "Aveiro",
-        "county": "Vagos"
-    },
-    "ez1z5n6s01wc": {
-        "district": "Aveiro",
-        "county": "Aveiro"
-    },
-    "ez1ypu6tk2eb": {
-        "district": "Aveiro",
-        "county": "Anadia"
-    },
-    "ez1zx0hw7y49": {
-        "district": "Aveiro",
-        "county": "Albergaria-a-Velha"
-    },
-    "ez616gtvgu6h": {
-        "district": "Aveiro",
-        "county": "Castelo de Paiva"
-    },
-    "ez1yfz10us2j": {
-        "district": "Aveiro",
-        "county": "Ílhavo"
-    },
-    "ez3bwvfpchsd": {
-        "district": "Aveiro",
-        "county": "São João da Madeira"
-    },
-    "ez1yqxrdp594": {
-        "district": "Aveiro",
-        "county": "Oliveira do Bairro"
-    },
-    "ez3br4d8mrsd": {
-        "district": "Aveiro",
-        "county": "Oliveira de Azeméis"
-    },
-    "ez1zuu3kj8bc": {
-        "district": "Aveiro",
-        "county": "Estarreja"
-    },
-    "ez4p9x07g37u": {
-        "district": "Aveiro",
-        "county": "Sever do Vouga"
-    },
-    "ez4nbqp8uguw": {
+    "ez1yygfq6sjr": {
         "district": "Aveiro",
         "county": "Águeda"
     },
-    "ez3c73kgp1hj": {
+    "ez1zkzj3qmfm": {
         "district": "Aveiro",
-        "county": "Espinho"
+        "county": "Albergaria-a-Velha"
     },
-    "ez60u6uu0zcy": {
+    "ez1ype02480h": {
+        "district": "Aveiro",
+        "county": "Anadia"
+    },
+    "ez60gexh82hk": {
         "district": "Aveiro",
         "county": "Arouca"
     },
-    "eyg0cjwu95d5": {
-        "district": "Beja",
-        "county": "Barrancos"
+    "ez1z4qptt89e": {
+        "district": "Aveiro",
+        "county": "Aveiro"
     },
-    "eydxynpmzyp0": {
-        "district": "Beja",
-        "county": "Serpa"
+    "ez617pcvubcm": {
+        "district": "Aveiro",
+        "county": "Castelo de Paiva"
     },
-    "eyf3k71eu9e0": {
-        "district": "Beja",
-        "county": "Cuba"
+    "ez3c4nvwsu9y": {
+        "district": "Aveiro",
+        "county": "Espinho"
     },
-    "eyf3q7znkczz": {
-        "district": "Beja",
-        "county": "Vidigueira"
+    "ez1zg7kksq5g": {
+        "district": "Aveiro",
+        "county": "Estarreja"
     },
-    "eyf0tquxvdsd": {
-        "district": "Beja",
-        "county": "Ferreira do Alentejo"
+    "ez1yczr5ngqv": {
+        "district": "Aveiro",
+        "county": "Ílhavo"
     },
-    "eyf2j0nkhmbf": {
-        "district": "Beja",
-        "county": "Beja"
+    "ez1vxp6fd71q": {
+        "district": "Aveiro",
+        "county": "Mealhada"
     },
-    "eydpt3xx5hd8": {
+    "ez1zdrfrdww5": {
+        "district": "Aveiro",
+        "county": "Murtosa"
+    },
+    "ez3bq7nwgznn": {
+        "district": "Aveiro",
+        "county": "Oliveira de Azeméis"
+    },
+    "ez1ymxm2444b": {
+        "district": "Aveiro",
+        "county": "Oliveira do Bairro"
+    },
+    "ez3b3edt8q08": {
+        "district": "Aveiro",
+        "county": "Ovar"
+    },
+    "ez3buemusy2c": {
+        "district": "Aveiro",
+        "county": "Santa Maria da Feira"
+    },
+    "ez3btvnnqwrw": {
+        "district": "Aveiro",
+        "county": "São João da Madeira"
+    },
+    "ez4p8x4m4y5j": {
+        "district": "Aveiro",
+        "county": "Sever do Vouga"
+    },
+    "ez1y9q2hgzve": {
+        "district": "Aveiro",
+        "county": "Vagos"
+    },
+    "ez3br6vf3xsz": {
+        "district": "Aveiro",
+        "county": "Vale de Cambra"
+    },
+    "eydpmqec14jp": {
         "district": "Beja",
         "county": "Aljustrel"
     },
-    "eydm0q4uhm75": {
+    "eydj1wp6mk9j": {
         "district": "Beja",
         "county": "Almodôvar"
     },
-    "eydq2ndwtrdg": {
-        "district": "Beja",
-        "county": "Castro Verde"
-    },
-    "eydw1st8y13k": {
-        "district": "Beja",
-        "county": "Mértola"
-    },
-    "ey9vgk6vyhss": {
-        "district": "Beja",
-        "county": "Odemira"
-    },
-    "eydnhy5tt7cr": {
-        "district": "Beja",
-        "county": "Ourique"
-    },
-    "eyfc025xu9mg": {
-        "district": "Beja",
-        "county": "Moura"
-    },
-    "eyf3912mmg89": {
+    "eyf39spsv1bv": {
         "district": "Beja",
         "county": "Alvito"
     },
-    "ez6hfn7x587w": {
+    "eyg0by48rz0q": {
+        "district": "Beja",
+        "county": "Barrancos"
+    },
+    "eyf26cu8jsft": {
+        "district": "Beja",
+        "county": "Beja"
+    },
+    "eydnsf5p5jnq": {
+        "district": "Beja",
+        "county": "Castro Verde"
+    },
+    "eyf32e4g0m11": {
+        "district": "Beja",
+        "county": "Cuba"
+    },
+    "eyf07r5rg7c0": {
+        "district": "Beja",
+        "county": "Ferreira do Alentejo"
+    },
+    "eydqe0qf16j2": {
+        "district": "Beja",
+        "county": "Mértola"
+    },
+    "eyf9h2jtbuxj": {
+        "district": "Beja",
+        "county": "Moura"
+    },
+    "ey9vghr8qcgm": {
+        "district": "Beja",
+        "county": "Odemira"
+    },
+    "eydnhwbrzyvx": {
+        "district": "Beja",
+        "county": "Ourique"
+    },
+    "eydxf7sr8hdh": {
+        "district": "Beja",
+        "county": "Serpa"
+    },
+    "eyf3qh3ws4m5": {
+        "district": "Beja",
+        "county": "Vidigueira"
+    },
+    "ez6hcfdpss49": {
         "district": "Braga",
         "county": "Amares"
     },
-    "ez6k708eh6y0": {
-        "district": "Braga",
-        "county": "Cabeceiras de Basto"
-    },
-    "ez3u2enkt7h2": {
-        "district": "Braga",
-        "county": "Esposende"
-    },
-    "ez65g0prg1mv": {
-        "district": "Braga",
-        "county": "Guimarães"
-    },
-    "ez6hebdj2phg": {
-        "district": "Braga",
-        "county": "Póvoa de Lanhoso"
-    },
-    "ez3gw1uf6y31": {
-        "district": "Braga",
-        "county": "Vila Nova de Famalicão"
-    },
-    "ez3vp3g8x0d0": {
-        "district": "Braga",
-        "county": "Vila Verde"
-    },
-    "ez3u7bedjr7f": {
+    "ez3u78z8jvpf": {
         "district": "Braga",
         "county": "Barcelos"
     },
-    "ez6hyeqgb33v": {
-        "district": "Braga",
-        "county": "Vieira do Minho"
-    },
-    "ez6h2hnumq8m": {
+    "ez3uqgryr97j": {
         "district": "Braga",
         "county": "Braga"
     },
-    "ez6577f18c65": {
+    "ez6k1stqszqd": {
         "district": "Braga",
-        "county": "Vizela"
+        "county": "Cabeceiras de Basto"
     },
-    "ez65y1fpvqhs": {
-        "district": "Braga",
-        "county": "Fafe"
-    },
-    "ez6jmmwkp26h": {
-        "district": "Braga",
-        "county": "Terras de Bouro"
-    },
-    "ez6791hpytb9": {
+    "ez673wj3zhp7": {
         "district": "Braga",
         "county": "Celorico de Basto"
     },
-    "ez7jbx94kmkj": {
-        "district": "Bragança",
-        "county": "Vinhais"
+    "ez3srbfkw7ue": {
+        "district": "Braga",
+        "county": "Esposende"
     },
-    "ez6f9u0m5fcc": {
-        "district": "Bragança",
-        "county": "Carrazeda de Ansiães"
+    "ez65v1ny5e8z": {
+        "district": "Braga",
+        "county": "Fafe"
     },
-    "ez7jy4y2078q": {
-        "district": "Bragança",
-        "county": "Bragança"
+    "ez3gzg8gxj24": {
+        "district": "Braga",
+        "county": "Guimarães"
     },
-    "ez6uh8vw88g9": {
-        "district": "Bragança",
-        "county": "Mirandela"
+    "ez6he093612e": {
+        "district": "Braga",
+        "county": "Póvoa de Lanhoso"
     },
-    "ez6fpx2rwhs6": {
-        "district": "Bragança",
-        "county": "Torre de Moncorvo"
+    "ez6j6dqj8nyc": {
+        "district": "Braga",
+        "county": "Terras de Bouro"
     },
-    "ez7ke6m9uvnj": {
-        "district": "Bragança",
-        "county": "Vimioso"
+    "ez6hy6kubj9c": {
+        "district": "Braga",
+        "county": "Vieira do Minho"
     },
-    "ez751w543wdf": {
+    "ez3gtd8q1f5n": {
+        "district": "Braga",
+        "county": "Vila Nova de Famalicão"
+    },
+    "ez3vj19z3s47": {
+        "district": "Braga",
+        "county": "Vila Verde"
+    },
+    "ez656s25nc9v": {
+        "district": "Braga",
+        "county": "Vizela"
+    },
+    "ez751jd7bjbp": {
         "district": "Bragança",
         "county": "Alfândega da Fé"
     },
-    "ez7715zygkfx": {
+    "ez7jves3gu36": {
         "district": "Bragança",
-        "county": "Mogadouro"
+        "county": "Bragança"
     },
-    "ez7h6vrb8n7p": {
+    "ez6dw6zw6x55": {
         "district": "Bragança",
-        "county": "Macedo de Cavaleiros"
+        "county": "Carrazeda de Ansiães"
     },
-    "ez7s16c77rut": {
-        "district": "Bragança",
-        "county": "Miranda do Douro"
-    },
-    "ez6ghfjs5z3w": {
-        "district": "Bragança",
-        "county": "Vila Flor"
-    },
-    "ez74j0z8tuxg": {
+    "ez71u81w3m3y": {
         "district": "Bragança",
         "county": "Freixo de Espada à Cinta"
     },
-    "ez4996mq3xvf": {
-        "district": "Castelo Branco",
-        "county": "Vila Velha de Ródão"
+    "ez7h2f0xcthe": {
+        "district": "Bragança",
+        "county": "Macedo de Cavaleiros"
     },
-    "ez4ut5ycs59b": {
-        "district": "Castelo Branco",
-        "county": "Penamacor"
+    "ez7s06rkp7q1": {
+        "district": "Bragança",
+        "county": "Miranda do Douro"
     },
-    "ez41y8t16sys": {
-        "district": "Castelo Branco",
-        "county": "Vila de Rei"
+    "ez6ggnf55hzv": {
+        "district": "Bragança",
+        "county": "Mirandela"
     },
-    "ez4sm0d968ud": {
-        "district": "Castelo Branco",
-        "county": "Fundão"
+    "ez75nw4ctnc4": {
+        "district": "Bragança",
+        "county": "Mogadouro"
     },
-    "ez4du0eymwzr": {
-        "district": "Castelo Branco",
-        "county": "Castelo Branco"
+    "ez6fppccx2u0": {
+        "district": "Bragança",
+        "county": "Torre de Moncorvo"
     },
-    "ez4v3jucp08r": {
+    "ez6g1f07c8md": {
+        "district": "Bragança",
+        "county": "Vila Flor"
+    },
+    "ez7ke4377rp1": {
+        "district": "Bragança",
+        "county": "Vimioso"
+    },
+    "ez7jbpjg64dn": {
+        "district": "Bragança",
+        "county": "Vinhais"
+    },
+    "ez4trqbgg4qf": {
         "district": "Castelo Branco",
         "county": "Belmonte"
     },
-    "ez47htbmtpfg": {
+    "ez4d6zrw2svt": {
         "district": "Castelo Branco",
-        "county": "Oleiros"
+        "county": "Castelo Branco"
     },
-    "ez43vn7qu5rp": {
-        "district": "Castelo Branco",
-        "county": "Proença-a-Nova"
-    },
-    "ez44ry265mb1": {
-        "district": "Castelo Branco",
-        "county": "Sertã"
-    },
-    "ez4fy57s4qsq": {
-        "district": "Castelo Branco",
-        "county": "Idanha-a-Nova"
-    },
-    "ez4tjhze29sw": {
+    "ez4t5tyc22vj": {
         "district": "Castelo Branco",
         "county": "Covilhã"
     },
-    "ez1ud3hnmtq5": {
-        "district": "Coimbra",
-        "county": "Montemor-o-Velho"
+    "ez4kq0mrjuqy": {
+        "district": "Castelo Branco",
+        "county": "Fundão"
     },
-    "ez1unsgy874d": {
-        "district": "Coimbra",
-        "county": "Condeixa-a-Nova"
+    "ez4fbscvu5d5": {
+        "district": "Castelo Branco",
+        "county": "Idanha-a-Nova"
     },
-    "ez1y0fvtzbrg": {
-        "district": "Coimbra",
-        "county": "Mira"
+    "ez475g63009g": {
+        "district": "Castelo Branco",
+        "county": "Oleiros"
     },
-    "ez4mtny94m62": {
-        "district": "Coimbra",
-        "county": "Oliveira do Hospital"
+    "ez4us28u9g1y": {
+        "district": "Castelo Branco",
+        "county": "Penamacor"
     },
-    "ez4hrmyt8ed7": {
-        "district": "Coimbra",
-        "county": "Góis"
+    "ez465hhevb6e": {
+        "district": "Castelo Branco",
+        "county": "Proença-a-Nova"
     },
-    "ez4kf3ueujne": {
+    "ez44rkdegs9t": {
+        "district": "Castelo Branco",
+        "county": "Sertã"
+    },
+    "ez498s7wz9j7": {
+        "district": "Castelo Branco",
+        "county": "Vila Velha de Ródão"
+    },
+    "ez41wr9bndrk": {
+        "district": "Castelo Branco",
+        "county": "Vila de Rei"
+    },
+    "ez4kb3u1uk2g": {
         "district": "Coimbra",
         "county": "Arganil"
     },
-    "ez4m973gg0pr": {
-        "district": "Coimbra",
-        "county": "Tábua"
-    },
-    "ez45d48em9g9": {
-        "district": "Coimbra",
-        "county": "Penela"
-    },
-    "ez1ggsw7qt1t": {
-        "district": "Coimbra",
-        "county": "Soure"
-    },
-    "ez4h46gt7g84": {
-        "district": "Coimbra",
-        "county": "Miranda do Corvo"
-    },
-    "ez1vdur4n86r": {
+    "ez1vd29qw8jp": {
         "district": "Coimbra",
         "county": "Cantanhede"
     },
-    "ez47g41uuq0s": {
-        "district": "Coimbra",
-        "county": "Pampilhosa da Serra"
-    },
-    "ez4j5zrvzy29": {
-        "district": "Coimbra",
-        "county": "Penacova"
-    },
-    "ez4hb0njcmbx": {
+    "ez1uv73mn28s": {
         "district": "Coimbra",
         "county": "Coimbra"
     },
-    "ez4hk9jvkctv": {
+    "ez1unpq2whjj": {
         "district": "Coimbra",
-        "county": "Lousã"
+        "county": "Condeixa-a-Nova"
     },
-    "ez1sqkz8tyhs": {
+    "ez1smq4hqsre": {
         "district": "Coimbra",
         "county": "Figueira da Foz"
     },
-    "ez4hu0gpwn7d": {
+    "ez4hwcekhem7": {
+        "district": "Coimbra",
+        "county": "Góis"
+    },
+    "ez4h5y8j5cbw": {
+        "district": "Coimbra",
+        "county": "Lousã"
+    },
+    "ez1tztemnnbr": {
+        "district": "Coimbra",
+        "county": "Mira"
+    },
+    "ez4h41bgsnje": {
+        "district": "Coimbra",
+        "county": "Miranda do Corvo"
+    },
+    "ez1u95zcx2u5": {
+        "district": "Coimbra",
+        "county": "Montemor-o-Velho"
+    },
+    "ez4ms6r0swtu": {
+        "district": "Coimbra",
+        "county": "Oliveira do Hospital"
+    },
+    "ez45zfyvft7z": {
+        "district": "Coimbra",
+        "county": "Pampilhosa da Serra"
+    },
+    "ez4j4jjqun0n": {
+        "district": "Coimbra",
+        "county": "Penacova"
+    },
+    "ez458yybz7ne": {
+        "district": "Coimbra",
+        "county": "Penela"
+    },
+    "ez1gbgjq32pj": {
+        "district": "Coimbra",
+        "county": "Soure"
+    },
+    "ez4m8esr1p3x": {
+        "district": "Coimbra",
+        "county": "Tábua"
+    },
+    "ez4hcbzvpdfb": {
         "district": "Coimbra",
         "county": "Vila Nova de Poiares"
     },
-    "eyfu2rfxv0ke": {
-        "district": "Évora",
-        "county": "Vila Viçosa"
-    },
-    "eycgzgb2bn6j": {
-        "district": "Évora",
-        "county": "Vendas Novas"
-    },
-    "eyfk63320zug": {
-        "district": "Évora",
-        "county": "Arraiolos"
-    },
-    "eyfsgr5qs6bh": {
-        "district": "Évora",
-        "county": "Estremoz"
-    },
-    "eyfdsdcqke0r": {
-        "district": "Évora",
-        "county": "Reguengos de Monsaraz"
-    },
-    "eyfcgeug7mth": {
-        "district": "Évora",
-        "county": "Mourão"
-    },
-    "eyf61fekhn8v": {
-        "district": "Évora",
-        "county": "Viana do Alentejo"
-    },
-    "eyf3zyu86fzr": {
-        "district": "Évora",
-        "county": "Portel"
-    },
-    "eyfeejwvsf4z": {
-        "district": "Évora",
-        "county": "Redondo"
-    },
-    "eyfsy2384kh1": {
-        "district": "Évora",
-        "county": "Borba"
-    },
-    "eyfexgqg63gf": {
+    "eyfspj5s7qh7": {
         "district": "Évora",
         "county": "Alandroal"
     },
-    "eyf7kj8eh3ky": {
+    "eyfk33mgpbsh": {
+        "district": "Évora",
+        "county": "Arraiolos"
+    },
+    "eyfsuc5fnzhx": {
+        "district": "Évora",
+        "county": "Borba"
+    },
+    "eyfscxjdxy6b": {
+        "district": "Évora",
+        "county": "Estremoz"
+    },
+    "eyf76mkmk59q": {
         "district": "Évora",
         "county": "Évora"
     },
-    "eyf5vh9g4jkp": {
+    "eyf5u7gq8trd": {
         "district": "Évora",
         "county": "Montemor-o-Novo"
     },
-    "eyfjw1w46ffj": {
+    "eyfjt98srxnu": {
         "district": "Évora",
         "county": "Mora"
     },
-    "eyd5xyxsf7dg": {
-        "district": "Faro",
-        "county": "Loulé"
+    "eyfdppk67xpf": {
+        "district": "Évora",
+        "county": "Mourão"
     },
-    "ey9gsdupvx1q": {
-        "district": "Faro",
-        "county": "Portimão"
+    "eyf9bme1yfpr": {
+        "district": "Évora",
+        "county": "Portel"
     },
-    "eyd5fp8wkmy6": {
-        "district": "Faro",
-        "county": "Silves"
+    "eyfeg7q10pcj": {
+        "district": "Évora",
+        "county": "Redondo"
     },
-    "ey9um39bcyk3": {
-        "district": "Faro",
-        "county": "Monchique"
+    "eyfds546ctwc": {
+        "district": "Évora",
+        "county": "Reguengos de Monsaraz"
     },
-    "eydsc2zs67tb": {
-        "district": "Faro",
-        "county": "Alcoutim"
+    "eycu5d7ycfb5": {
+        "district": "Évora",
+        "county": "Vendas Novas"
     },
-    "eyd7ke2pwq1h": {
-        "district": "Faro",
-        "county": "São Brás de Alportel"
+    "eyf605umbc78": {
+        "district": "Évora",
+        "county": "Viana do Alentejo"
     },
-    "ey9dvqb1n521": {
-        "district": "Faro",
-        "county": "Vila do Bispo"
+    "eyfsmrzntudd": {
+        "district": "Évora",
+        "county": "Vila Viçosa"
     },
-    "eydewx64nqk0": {
-        "district": "Faro",
-        "county": "Castro Marim"
-    },
-    "eyd5m1fqd1ph": {
+    "eyd55khcfbm9": {
         "district": "Faro",
         "county": "Albufeira"
     },
-    "eyd6y72j1fb5": {
+    "eydtjtrngsjr": {
         "district": "Faro",
-        "county": "Olhão"
+        "county": "Alcoutim"
     },
-    "eydex704kbgw": {
-        "district": "Faro",
-        "county": "Vila Real de Santo António"
-    },
-    "ey9sr8ux1d5v": {
+    "ey9sm3jywjuc": {
         "district": "Faro",
         "county": "Aljezur"
     },
-    "eyde1yts04kp": {
+    "eydewphutg8g": {
         "district": "Faro",
-        "county": "Tavira"
+        "county": "Castro Marim"
     },
-    "eyd6e6tg2vr5": {
+    "eyd6ddbu4phj": {
         "district": "Faro",
         "county": "Faro"
     },
-    "ey9gpxg0znc5": {
+    "ey9gnpg0zzw2": {
         "district": "Faro",
         "county": "Lagoa"
     },
-    "ey9g35d2ej3t": {
+    "ey9g0udhp3bd": {
         "district": "Faro",
         "county": "Lagos"
     },
-    "ez709t1v70rm": {
-        "district": "Guarda",
-        "county": "Figueira de Castelo Rodrigo"
+    "eyd5reyz1u83": {
+        "district": "Faro",
+        "county": "Loulé"
     },
-    "ez4ydesy510x": {
-        "district": "Guarda",
-        "county": "Guarda"
+    "ey9ukbchjh5k": {
+        "district": "Faro",
+        "county": "Monchique"
     },
-    "ez4tu2js6xmv": {
-        "district": "Guarda",
-        "county": "Manteigas"
+    "eyd6sn1dqru3": {
+        "district": "Faro",
+        "county": "Olhão"
     },
-    "ez6bfgpkvf3n": {
-        "district": "Guarda",
-        "county": "Mêda"
+    "ey9gd86v9jpx": {
+        "district": "Faro",
+        "county": "Portimão"
     },
-    "ez4zyret7kqe": {
-        "district": "Guarda",
-        "county": "Pinhel"
+    "eyd7k5dbh611": {
+        "district": "Faro",
+        "county": "São Brás de Alportel"
     },
-    "ez4xp9rb28g6": {
-        "district": "Guarda",
-        "county": "Celorico da Beira"
+    "ey9gu8qvenfq": {
+        "district": "Faro",
+        "county": "Silves"
     },
-    "ez4w7hku7vpn": {
-        "district": "Guarda",
-        "county": "Gouveia"
+    "eyde0xjq6ev0": {
+        "district": "Faro",
+        "county": "Tavira"
     },
-    "ez68h81e3weu": {
+    "eydew3uhymn1": {
+        "district": "Faro",
+        "county": "Vila Real de Santo António"
+    },
+    "ey9duyw7p7fh": {
+        "district": "Faro",
+        "county": "Vila do Bispo"
+    },
+    "ez684t9ujzxs": {
         "district": "Guarda",
         "county": "Aguiar da Beira"
     },
-    "ez4xm9e3ffs3": {
-        "district": "Guarda",
-        "county": "Fornos de Algodres"
-    },
-    "ez5pdy48j4bc": {
+    "ez5p9q9qx8tw": {
         "district": "Guarda",
         "county": "Almeida"
     },
-    "ez6b0fyr9uxz": {
+    "ez4xnu078kwf": {
         "district": "Guarda",
-        "county": "Trancoso"
+        "county": "Celorico da Beira"
     },
-    "ez4vze4prtrg": {
+    "ez708uxzqbtb": {
+        "district": "Guarda",
+        "county": "Figueira de Castelo Rodrigo"
+    },
+    "ez4wfx9ykxzc": {
+        "district": "Guarda",
+        "county": "Fornos de Algodres"
+    },
+    "ez4w6enbhjeq": {
+        "district": "Guarda",
+        "county": "Gouveia"
+    },
+    "ez4y9ecjdy1k": {
+        "district": "Guarda",
+        "county": "Guarda"
+    },
+    "ez4tgjfsds7g": {
+        "district": "Guarda",
+        "county": "Manteigas"
+    },
+    "ez6c43t6530k": {
+        "district": "Guarda",
+        "county": "Mêda"
+    },
+    "ez4zywqxw1uq": {
+        "district": "Guarda",
+        "county": "Pinhel"
+    },
+    "ez4vc51mhm65": {
         "district": "Guarda",
         "county": "Sabugal"
     },
-    "ez4t8zrr6qyc": {
+    "ez4mzx5dzgg0": {
         "district": "Guarda",
         "county": "Seia"
     },
-    "ez6ctqxp19yr": {
+    "ez4xzyukw3hn": {
+        "district": "Guarda",
+        "county": "Trancoso"
+    },
+    "ez6cf7rhffn7": {
         "district": "Guarda",
         "county": "Vila Nova de Foz Côa"
     },
-    "ez4501cs49f7": {
-        "district": "Leiria",
-        "county": "Ansião"
-    },
-    "ez45tm1dq12w": {
-        "district": "Leiria",
-        "county": "Castanheira de Pêra"
-    },
-    "ez448b3cf1hq": {
-        "district": "Leiria",
-        "county": "Alvaiázere"
-    },
-    "eycrztegyzef": {
-        "district": "Leiria",
-        "county": "Óbidos"
-    },
-    "ez1dpe4u77mr": {
-        "district": "Leiria",
-        "county": "Leiria"
-    },
-    "ez1dk56r2eh3": {
-        "district": "Leiria",
-        "county": "Marinha Grande"
-    },
-    "ez19397rdj8s": {
-        "district": "Leiria",
-        "county": "Nazaré"
-    },
-    "ez45jxkry2z7": {
-        "district": "Leiria",
-        "county": "Pedrógão Grande"
-    },
-    "ez19r36s9mmd": {
-        "district": "Leiria",
-        "county": "Porto de Mós"
-    },
-    "eycrrvbb6r0x": {
-        "district": "Leiria",
-        "county": "Bombarral"
-    },
-    "ez181keu9sb7": {
-        "district": "Leiria",
-        "county": "Caldas da Rainha"
-    },
-    "ez19x5w20qe0": {
-        "district": "Leiria",
-        "county": "Batalha"
-    },
-    "ez455jjcqhdd": {
-        "district": "Leiria",
-        "county": "Figueiró dos Vinhos"
-    },
-    "eycru14efy38": {
-        "district": "Leiria",
-        "county": "Peniche"
-    },
-    "ez1g5dt0ey00": {
-        "district": "Leiria",
-        "county": "Pombal"
-    },
-    "ez1958pwshk0": {
+    "ez18ghbstqq7": {
         "district": "Leiria",
         "county": "Alcobaça"
     },
-    "eyct77y8cpnz": {
-        "district": "Lisboa",
-        "county": "Vila Franca de Xira"
+    "ez1fx3vbpyqc": {
+        "district": "Leiria",
+        "county": "Alvaiázere"
     },
-    "eyckgjvct35q": {
-        "district": "Lisboa",
-        "county": "Sintra"
+    "ez1gp4ut5euv": {
+        "district": "Leiria",
+        "county": "Ansião"
     },
-    "eyckwymxkpxk": {
-        "district": "Lisboa",
-        "county": "Odivelas"
+    "ez19t7mmkf7w": {
+        "district": "Leiria",
+        "county": "Batalha"
     },
-    "eycw5n0c7s46": {
+    "eycrq111enhp": {
+        "district": "Leiria",
+        "county": "Bombarral"
+    },
+    "ez12qe8n8qsf": {
+        "district": "Leiria",
+        "county": "Caldas da Rainha"
+    },
+    "ez45d4s2kcqs": {
+        "district": "Leiria",
+        "county": "Castanheira de Pêra"
+    },
+    "ez44bt8dw5sj": {
+        "district": "Leiria",
+        "county": "Figueiró dos Vinhos"
+    },
+    "ez1dnj08n4q8": {
+        "district": "Leiria",
+        "county": "Leiria"
+    },
+    "ez1d1p9g9nfm": {
+        "district": "Leiria",
+        "county": "Marinha Grande"
+    },
+    "ez192gnwj751": {
+        "district": "Leiria",
+        "county": "Nazaré"
+    },
+    "eycrvyf9wn2d": {
+        "district": "Leiria",
+        "county": "Óbidos"
+    },
+    "ez45n6cct2cn": {
+        "district": "Leiria",
+        "county": "Pedrógão Grande"
+    },
+    "ez10p9szw5nx": {
+        "district": "Leiria",
+        "county": "Peniche"
+    },
+    "ez1fbwg0nn3v": {
+        "district": "Leiria",
+        "county": "Pombal"
+    },
+    "ez19m9ck5z4m": {
+        "district": "Leiria",
+        "county": "Porto de Mós"
+    },
+    "eycw1wyyteq8": {
         "district": "Lisboa",
         "county": "Alenquer"
     },
-    "eycqkzuchkpf": {
-        "district": "Lisboa",
-        "county": "Torres Vedras"
-    },
-    "eyckqpgw89xb": {
+    "eyckkrfy3142": {
         "district": "Lisboa",
         "county": "Amadora"
     },
-    "eycx1z3556g9": {
-        "district": "Lisboa",
-        "county": "Cadaval"
-    },
-    "eycwt7t2d1qx": {
-        "district": "Lisboa",
-        "county": "Azambuja"
-    },
-    "eycme8r2k6f4": {
-        "district": "Lisboa",
-        "county": "Mafra"
-    },
-    "eycmp1y77yzs": {
-        "district": "Lisboa",
-        "county": "Loures"
-    },
-    "eyckjp2ueh92": {
-        "district": "Lisboa",
-        "county": "Oeiras"
-    },
-    "eyctc2tuegkr": {
+    "eyctb4hkjyrd": {
         "district": "Lisboa",
         "county": "Arruda dos Vinhos"
     },
-    "eycrm08bdnud": {
+    "eycwk96v9cu5": {
         "district": "Lisboa",
-        "county": "Lourinhã"
+        "county": "Azambuja"
     },
-    "eycmzxpfmew7": {
+    "eycx0p8w2byg": {
         "district": "Lisboa",
-        "county": "Sobral de Monte Agraço"
+        "county": "Cadaval"
     },
-    "eycs0ndbvzxq": {
-        "district": "Lisboa",
-        "county": "Lisboa"
-    },
-    "eyck61jqk4sd": {
+    "eyck0pyg71hq": {
         "district": "Lisboa",
         "county": "Cascais"
     },
-    "eyfqk40qtg7k": {
-        "district": "Portalegre",
-        "county": "Avis"
+    "eyckmvn9zewd": {
+        "district": "Lisboa",
+        "county": "Lisboa"
     },
-    "eyft9743pxc4": {
-        "district": "Portalegre",
-        "county": "Sousel"
+    "eyckvpkgmtpx": {
+        "district": "Lisboa",
+        "county": "Loures"
     },
-    "eyfrpurwhtkw": {
+    "eycr6cvu2fty": {
+        "district": "Lisboa",
+        "county": "Lourinhã"
+    },
+    "eycmdjhrebk9": {
+        "district": "Lisboa",
+        "county": "Mafra"
+    },
+    "eyckwttpxy5x": {
+        "district": "Lisboa",
+        "county": "Odivelas"
+    },
+    "eyck57chcc38": {
+        "district": "Lisboa",
+        "county": "Oeiras"
+    },
+    "eyck8t4r6s08": {
+        "district": "Lisboa",
+        "county": "Sintra"
+    },
+    "eycmyqnvzxnk": {
+        "district": "Lisboa",
+        "county": "Sobral de Monte Agraço"
+    },
+    "eycq7sevk9r8": {
+        "district": "Lisboa",
+        "county": "Torres Vedras"
+    },
+    "eyctdss0ty73": {
+        "district": "Lisboa",
+        "county": "Vila Franca de Xira"
+    },
+    "eyfwcrf739q0": {
         "district": "Portalegre",
         "county": "Alter do Chão"
     },
-    "eyfvzjur44qs": {
-        "district": "Portalegre",
-        "county": "Campo Maior"
-    },
-    "eyfy6znx346m": {
+    "eyfy9672mxxr": {
         "district": "Portalegre",
         "county": "Arronches"
     },
-    "ez48bfkzeffh": {
+    "eyfnm61tsq9n": {
         "district": "Portalegre",
-        "county": "Nisa"
+        "county": "Avis"
     },
-    "ez4b0t31c178": {
+    "eyfvyycy745n": {
         "district": "Portalegre",
-        "county": "Marvão"
+        "county": "Campo Maior"
     },
-    "eyfvhype29c1": {
-        "district": "Portalegre",
-        "county": "Elvas"
-    },
-    "ez427vtfks2m": {
-        "district": "Portalegre",
-        "county": "Gavião"
-    },
-    "eyfwp0uc4ehd": {
-        "district": "Portalegre",
-        "county": "Monforte"
-    },
-    "eyfnzuubjxm2": {
-        "district": "Portalegre",
-        "county": "Ponte de Sor"
-    },
-    "eyfxd7g9cdfm": {
-        "district": "Portalegre",
-        "county": "Crato"
-    },
-    "ez48tdkh44sw": {
+    "ez48nnbbwq7s": {
         "district": "Portalegre",
         "county": "Castelo de Vide"
     },
-    "eyfxwbepmqre": {
+    "eyfx98t2xskb": {
         "district": "Portalegre",
-        "county": "Portalegre"
+        "county": "Crato"
     },
-    "eyfw1vyuxfd0": {
+    "eyfv6u6vwby9": {
+        "district": "Portalegre",
+        "county": "Elvas"
+    },
+    "eyfw1njwhr0s": {
         "district": "Portalegre",
         "county": "Fronteira"
     },
-    "ez664qxhedch": {
-        "district": "Porto",
-        "county": "Baião"
+    "ez423wscpmx2": {
+        "district": "Portalegre",
+        "county": "Gavião"
     },
-    "ez64pj3808x1": {
-        "district": "Porto",
-        "county": "Marco de Canaveses"
+    "ez48pg2n65tf": {
+        "district": "Portalegre",
+        "county": "Marvão"
     },
-    "ez3fvncjttnj": {
-        "district": "Porto",
-        "county": "Trofa"
+    "eyfwnm7ghb9n": {
+        "district": "Portalegre",
+        "county": "Monforte"
     },
-    "ez64uhccqj9w": {
-        "district": "Porto",
-        "county": "Lousada"
+    "ez48c94pd4e3": {
+        "district": "Portalegre",
+        "county": "Nisa"
     },
-    "ez3fh51bfjdv": {
-        "district": "Porto",
-        "county": "Porto"
+    "eyfprwjqnfr3": {
+        "district": "Portalegre",
+        "county": "Ponte de Sor"
     },
-    "ez3g2cn0rh20": {
-        "district": "Porto",
-        "county": "Vila do Conde"
+    "eyfxw03fwskj": {
+        "district": "Portalegre",
+        "county": "Portalegre"
     },
-    "ez3fqdefv51g": {
-        "district": "Porto",
-        "county": "Valongo"
+    "eyfmxtty6r8e": {
+        "district": "Portalegre",
+        "county": "Sousel"
     },
-    "ez3f62tyf56t": {
-        "district": "Porto",
-        "county": "Matosinhos"
-    },
-    "ez647kcy0z2c": {
-        "district": "Porto",
-        "county": "Penafiel"
-    },
-    "ez3cupmrtmek": {
-        "district": "Porto",
-        "county": "Vila Nova de Gaia"
-    },
-    "ez3g8gvrh4g7": {
-        "district": "Porto",
-        "county": "Póvoa de Varzim"
-    },
-    "ez3gpn7n6c7b": {
-        "district": "Porto",
-        "county": "Santo Tirso"
-    },
-    "ez3fee5bfqqu": {
-        "district": "Porto",
-        "county": "Maia"
-    },
-    "ez3fjc68z6k0": {
-        "district": "Porto",
-        "county": "Gondomar"
-    },
-    "ez64cke190jr": {
-        "district": "Porto",
-        "county": "Paços de Ferreira"
-    },
-    "ez66b0gyz8z5": {
+    "ez64z2fg1kjy": {
         "district": "Porto",
         "county": "Amarante"
     },
-    "ez640ttvctwz": {
+    "ez64nyegfq2m": {
         "district": "Porto",
-        "county": "Paredes"
+        "county": "Baião"
     },
-    "ez65m219hgmf": {
+    "ez656249t6ne": {
         "district": "Porto",
         "county": "Felgueiras"
     },
-    "ez1bv1mnjere": {
-        "district": "Santarém",
-        "county": "Torres Novas"
+    "ez3cgfkw13ru": {
+        "district": "Porto",
+        "county": "Gondomar"
     },
-    "ez40d60qfhdy": {
-        "district": "Santarém",
-        "county": "Constância"
+    "ez64cf442snj": {
+        "district": "Porto",
+        "county": "Lousada"
     },
-    "ez436d8busec": {
-        "district": "Santarém",
-        "county": "Mação"
+    "ez3fe15q0uce": {
+        "district": "Porto",
+        "county": "Maia"
     },
-    "ez41298k51hx": {
-        "district": "Santarém",
-        "county": "Tomar"
+    "ez64m8ebeugf": {
+        "district": "Porto",
+        "county": "Marco de Canaveses"
     },
-    "eycz4qf83h2f": {
-        "district": "Santarém",
-        "county": "Santarém"
+    "ez3f3cnzymzc": {
+        "district": "Porto",
+        "county": "Matosinhos"
     },
-    "ez40ykcg4kcq": {
-        "district": "Santarém",
-        "county": "Sardoal"
+    "ez64bfncyuzz": {
+        "district": "Porto",
+        "county": "Paços de Ferreira"
     },
-    "eyctxrp0zyuc": {
-        "district": "Santarém",
-        "county": "Benavente"
+    "ez3fnj8jm5fj": {
+        "district": "Porto",
+        "county": "Paredes"
     },
-    "ez1bnuuhheng": {
-        "district": "Santarém",
-        "county": "Golegã"
+    "ez646v77weyd": {
+        "district": "Porto",
+        "county": "Penafiel"
     },
-    "eycy4hmdh6qs": {
-        "district": "Santarém",
-        "county": "Salvaterra de Magos"
+    "ez3f4jqdtzdu": {
+        "district": "Porto",
+        "county": "Porto"
     },
-    "eycyufmd5uzy": {
-        "district": "Santarém",
-        "county": "Almeirim"
+    "ez3g8smpxdsp": {
+        "district": "Porto",
+        "county": "Póvoa de Varzim"
     },
-    "ez1bx091uj9j": {
-        "district": "Santarém",
-        "county": "Entroncamento"
+    "ez3gnn1jz0ky": {
+        "district": "Porto",
+        "county": "Santo Tirso"
     },
-    "ez41g3gn5ddp": {
-        "district": "Santarém",
-        "county": "Ferreira do Zêzere"
+    "ez3fgqur8xyv": {
+        "district": "Porto",
+        "county": "Trofa"
     },
-    "ez40r5c5q25d": {
+    "ez3fm48rpnst": {
+        "district": "Porto",
+        "county": "Valongo"
+    },
+    "ez3cf7muzq72": {
+        "district": "Porto",
+        "county": "Vila Nova de Gaia"
+    },
+    "ez3g20rpvjfs": {
+        "district": "Porto",
+        "county": "Vila do Conde"
+    },
+    "ez40dsdneuyg": {
         "district": "Santarém",
         "county": "Abrantes"
     },
-    "ez1bd7jxq8xt": {
+    "ez1b6phr1prj": {
         "district": "Santarém",
         "county": "Alcanena"
     },
-    "ez4085vdbpvm": {
+    "eycyfn3mn2er": {
         "district": "Santarém",
-        "county": "Vila Nova da Barquinha"
+        "county": "Almeirim"
     },
-    "eycxv5x0dw96": {
-        "district": "Santarém",
-        "county": "Rio Maior"
-    },
-    "eycyb14n9wv7": {
-        "district": "Santarém",
-        "county": "Cartaxo"
-    },
-    "eycvwbpv7btd": {
-        "district": "Santarém",
-        "county": "Coruche"
-    },
-    "ez1cv0c50z8h": {
-        "district": "Santarém",
-        "county": "Ourém"
-    },
-    "eyfp3h3t07gy": {
-        "district": "Santarém",
-        "county": "Chamusca"
-    },
-    "eyczjpjy9jzc": {
+    "eycz1znq4vy4": {
         "district": "Santarém",
         "county": "Alpiarça"
     },
-    "eycef15e9xv4": {
-        "district": "Setúbal",
-        "county": "Barreiro"
+    "eyct1nhk2pg3": {
+        "district": "Santarém",
+        "county": "Benavente"
     },
-    "eyckp2y6814s": {
-        "district": "Setúbal",
-        "county": "Almada"
+    "eycwy2gt9e85": {
+        "district": "Santarém",
+        "county": "Cartaxo"
     },
-    "eycskp6fm5qd": {
-        "district": "Setúbal",
-        "county": "Alcochete"
+    "eyczv8rphchz": {
+        "district": "Santarém",
+        "county": "Chamusca"
     },
-    "ey9zyd2hkwxv": {
-        "district": "Setúbal",
-        "county": "Santiago do Cacém"
+    "ez409ewg5csp": {
+        "district": "Santarém",
+        "county": "Constância"
     },
-    "eycd8yvcnzj3": {
-        "district": "Setúbal",
-        "county": "Sesimbra"
+    "eycve278xjr7": {
+        "district": "Santarém",
+        "county": "Coruche"
     },
-    "eycu7tkdjh0w": {
-        "district": "Setúbal",
-        "county": "Montijo"
+    "ez1bw293btcn": {
+        "district": "Santarém",
+        "county": "Entroncamento"
     },
-    "ey9zbbkkrwmk": {
-        "district": "Setúbal",
-        "county": "Sines"
+    "ez41fcuh1fr8": {
+        "district": "Santarém",
+        "county": "Ferreira do Zêzere"
     },
-    "eyccjjbbj2y9": {
-        "district": "Setúbal",
-        "county": "Grândola"
+    "ez1bjqxnqq35": {
+        "district": "Santarém",
+        "county": "Golegã"
     },
-    "eycejths7jbn": {
-        "district": "Setúbal",
-        "county": "Setúbal"
+    "ez4311syfmum": {
+        "district": "Santarém",
+        "county": "Mação"
     },
-    "eycfmb7djfz8": {
+    "ez1c3wj2p14d": {
+        "district": "Santarém",
+        "county": "Ourém"
+    },
+    "eycxc2xn00vh": {
+        "district": "Santarém",
+        "county": "Rio Maior"
+    },
+    "eycwncfb45ew": {
+        "district": "Santarém",
+        "county": "Salvaterra de Magos"
+    },
+    "eycxpjhq4m8k": {
+        "district": "Santarém",
+        "county": "Santarém"
+    },
+    "ez40uyj113rj": {
+        "district": "Santarém",
+        "county": "Sardoal"
+    },
+    "ez1cr2d13xs5": {
+        "district": "Santarém",
+        "county": "Tomar"
+    },
+    "ez1begwx4665": {
+        "district": "Santarém",
+        "county": "Torres Novas"
+    },
+    "ez1bx7f4vzfq": {
+        "district": "Santarém",
+        "county": "Vila Nova da Barquinha"
+    },
+    "eycfmkj3r160": {
         "district": "Setúbal",
         "county": "Alcácer do Sal"
     },
-    "eycebf8732f0": {
+    "eycs3vux7ujh": {
         "district": "Setúbal",
-        "county": "Seixal"
+        "county": "Alcochete"
     },
-    "eyceg5z4228e": {
+    "eyc7yydnfqgn": {
+        "district": "Setúbal",
+        "county": "Almada"
+    },
+    "eycebttzd79b": {
+        "district": "Setúbal",
+        "county": "Barreiro"
+    },
+    "eyc9pj8j5pgq": {
+        "district": "Setúbal",
+        "county": "Grândola"
+    },
+    "eycecev4c588": {
         "district": "Setúbal",
         "county": "Moita"
     },
-    "eycemmqk5ydp": {
+    "eycs6j3892uq": {
+        "district": "Setúbal",
+        "county": "Montijo"
+    },
+    "eyceknrrj6y4": {
         "district": "Setúbal",
         "county": "Palmela"
     },
-    "ez3y3z15p606": {
-        "district": "Viana do Castelo",
-        "county": "Vila Nova de Cerveira"
+    "eyc8nrbck1h3": {
+        "district": "Setúbal",
+        "county": "Santiago do Cacém"
     },
-    "ez3tpn36hwx9": {
-        "district": "Viana do Castelo",
-        "county": "Viana do Castelo"
+    "eycebdtuq5ry": {
+        "district": "Setúbal",
+        "county": "Seixal"
     },
-    "ez6jfd7xdyyc": {
-        "district": "Viana do Castelo",
-        "county": "Ponte da Barca"
+    "eycd8wf3j5kt": {
+        "district": "Setúbal",
+        "county": "Sesimbra"
     },
-    "ez3ymn5gjnns": {
-        "district": "Viana do Castelo",
-        "county": "Paredes de Coura"
+    "eyce5j5275kp": {
+        "district": "Setúbal",
+        "county": "Setúbal"
     },
-    "ez3z56f3q1p7": {
-        "district": "Viana do Castelo",
-        "county": "Valença"
+    "ey9xuvuq5vjx": {
+        "district": "Setúbal",
+        "county": "Sines"
     },
-    "ez3wnz5zbpmj": {
-        "district": "Viana do Castelo",
-        "county": "Caminha"
-    },
-    "ez6p06ywt0sp": {
-        "district": "Viana do Castelo",
-        "county": "Monção"
-    },
-    "ez3vsetcr69q": {
-        "district": "Viana do Castelo",
-        "county": "Ponte de Lima"
-    },
-    "ez6n06n395hh": {
+    "ez6n038qu5kg": {
         "district": "Viana do Castelo",
         "county": "Arcos de Valdevez"
     },
-    "ez6pjkzrjrxj": {
+    "ez3wjvwqzzmg": {
+        "district": "Viana do Castelo",
+        "county": "Caminha"
+    },
+    "ez6pedsdh047": {
         "district": "Viana do Castelo",
         "county": "Melgaço"
     },
-    "ez6kqb4bqkj9": {
-        "district": "Vila Real",
-        "county": "Ribeira de Pena"
+    "ez3zqddme1se": {
+        "district": "Viana do Castelo",
+        "county": "Monção"
     },
-    "ez6dvfhx5hc0": {
+    "ez3ykvgt2gh9": {
+        "district": "Viana do Castelo",
+        "county": "Paredes de Coura"
+    },
+    "ez6jb63x72ey": {
+        "district": "Viana do Castelo",
+        "county": "Ponte da Barca"
+    },
+    "ez3vs5jume9u": {
+        "district": "Viana do Castelo",
+        "county": "Ponte de Lima"
+    },
+    "ez3yburserzy": {
+        "district": "Viana do Castelo",
+        "county": "Valença"
+    },
+    "ez3tmfnt4g7x": {
+        "district": "Viana do Castelo",
+        "county": "Viana do Castelo"
+    },
+    "ez3y8fv8uurr": {
+        "district": "Viana do Castelo",
+        "county": "Vila Nova de Cerveira"
+    },
+    "ez6dudvsbn9r": {
         "district": "Vila Real",
         "county": "Alijó"
     },
-    "ez6myttvcvmk": {
-        "district": "Vila Real",
-        "county": "Montalegre"
-    },
-    "ez67s80kkkth": {
-        "district": "Vila Real",
-        "county": "Mondim de Basto"
-    },
-    "ez66mdtwb1fg": {
-        "district": "Vila Real",
-        "county": "Peso da Régua"
-    },
-    "ez6dg5t55qdr": {
-        "district": "Vila Real",
-        "county": "Sabrosa"
-    },
-    "ez66w83zjqq9": {
-        "district": "Vila Real",
-        "county": "Santa Marta de Penaguião"
-    },
-    "ez6u9wk3hg3r": {
-        "district": "Vila Real",
-        "county": "Valpaços"
-    },
-    "ez6s5j8vb1ef": {
-        "district": "Vila Real",
-        "county": "Vila Pouca de Aguiar"
-    },
-    "ez6ewj7excgn": {
-        "district": "Vila Real",
-        "county": "Murça"
-    },
-    "ez66jj43bhkw": {
-        "district": "Vila Real",
-        "county": "Mesão Frio"
-    },
-    "ez6mpsuvenem": {
+    "ez6t0n8j9hs7": {
         "district": "Vila Real",
         "county": "Boticas"
     },
-    "ez66ztyfqyw4": {
-        "district": "Vila Real",
-        "county": "Vila Real"
-    },
-    "ez6tmyx2vcyb": {
+    "ez6t3hf88uhb": {
         "district": "Vila Real",
         "county": "Chaves"
     },
-    "ez62rt8hgpnu": {
-        "district": "Viseu",
-        "county": "Vila Nova de Paiva"
+    "ez66hj9qpubm": {
+        "district": "Vila Real",
+        "county": "Mesão Frio"
     },
-    "ez62engf3f1j": {
-        "district": "Viseu",
-        "county": "Castro Daire"
+    "ez67d333dwws": {
+        "district": "Vila Real",
+        "county": "Mondim de Basto"
     },
-    "ez69bgx4dt2j": {
+    "ez6mvjenprk7": {
+        "district": "Vila Real",
+        "county": "Montalegre"
+    },
+    "ez6etd3bk8yn": {
+        "district": "Vila Real",
+        "county": "Murça"
+    },
+    "ez66nnktztf8": {
+        "district": "Vila Real",
+        "county": "Peso da Régua"
+    },
+    "ez6kjxtzcmmv": {
+        "district": "Vila Real",
+        "county": "Ribeira de Pena"
+    },
+    "ez6dg11dvh0d": {
+        "district": "Vila Real",
+        "county": "Sabrosa"
+    },
+    "ez66qt3uwte1": {
+        "district": "Vila Real",
+        "county": "Santa Marta de Penaguião"
+    },
+    "ez6u8qke6fhs": {
+        "district": "Vila Real",
+        "county": "Valpaços"
+    },
+    "ez6s1e589euf": {
+        "district": "Vila Real",
+        "county": "Vila Pouca de Aguiar"
+    },
+    "ez66uyz21pfg": {
+        "district": "Vila Real",
+        "county": "Vila Real"
+    },
+    "ez69b625yh42": {
         "district": "Viseu",
         "county": "Armamar"
     },
-    "ez63r542v6z6": {
-        "district": "Viseu",
-        "county": "Tarouca"
-    },
-    "ez4pqsdrxtxr": {
-        "district": "Viseu",
-        "county": "Vouzela"
-    },
-    "ez69pme8dt9k": {
-        "district": "Viseu",
-        "county": "Penedono"
-    },
-    "ez4junny7nhy": {
-        "district": "Viseu",
-        "county": "Mortágua"
-    },
-    "ez4pssm4kkwj": {
-        "district": "Viseu",
-        "county": "Oliveira de Frades"
-    },
-    "ez4x3swz1b2z": {
-        "district": "Viseu",
-        "county": "Penalva do Castelo"
-    },
-    "ez63fg06zf23": {
-        "district": "Viseu",
-        "county": "Resende"
-    },
-    "ez68czgtkyz5": {
-        "district": "Viseu",
-        "county": "Moimenta da Beira"
-    },
-    "ez4xb0bwbk6e": {
-        "district": "Viseu",
-        "county": "Sátão"
-    },
-    "ez4r7cmqctcx": {
-        "district": "Viseu",
-        "county": "Viseu"
-    },
-    "ez61rmzbt9qg": {
-        "district": "Viseu",
-        "county": "Cinfães"
-    },
-    "ez4qzufwj2mk": {
-        "district": "Viseu",
-        "county": "Mangualde"
-    },
-    "ez69z7kcu2d8": {
-        "district": "Viseu",
-        "county": "São João da Pesqueira"
-    },
-    "ez69gv4mvpk0": {
-        "district": "Viseu",
-        "county": "Tabuaço"
-    },
-    "ez63whvk1rm4": {
-        "district": "Viseu",
-        "county": "Lamego"
-    },
-    "ez4q1bsmsj7w": {
+    "ez4q10vcz9jd": {
         "district": "Viseu",
         "county": "Carregal do Sal"
     },
-    "ez4qt6206ctb": {
+    "ez62f2k2vnj5": {
+        "district": "Viseu",
+        "county": "Castro Daire"
+    },
+    "ez61xmk7tn2x": {
+        "district": "Viseu",
+        "county": "Cinfães"
+    },
+    "ez63u8d8wqc4": {
+        "district": "Viseu",
+        "county": "Lamego"
+    },
+    "ez4rjc2wndb4": {
+        "district": "Viseu",
+        "county": "Mangualde"
+    },
+    "ez694jyr9tfv": {
+        "district": "Viseu",
+        "county": "Moimenta da Beira"
+    },
+    "ez4ju6pjny32": {
+        "district": "Viseu",
+        "county": "Mortágua"
+    },
+    "ez4qe8rjyw12": {
         "district": "Viseu",
         "county": "Nelas"
     },
-    "ez4nwsy5bgcc": {
+    "ez4pemqu8353": {
         "district": "Viseu",
-        "county": "Tondela"
+        "county": "Oliveira de Frades"
     },
-    "ez4jz6mnrvp0": {
+    "ez4rqs8qrngm": {
+        "district": "Viseu",
+        "county": "Penalva do Castelo"
+    },
+    "ez69q36bjj9j": {
+        "district": "Viseu",
+        "county": "Penedono"
+    },
+    "ez638jmn0w33": {
+        "district": "Viseu",
+        "county": "Resende"
+    },
+    "ez4jvbxwpz9t": {
         "district": "Viseu",
         "county": "Santa Comba Dão"
     },
-    "ez68v09x7vtr": {
+    "ez6dj9tqxc90": {
         "district": "Viseu",
-        "county": "Sernancelhe"
+        "county": "São João da Pesqueira"
     },
-    "ez60r97us87d": {
+    "ez4pzsn8fu2p": {
         "district": "Viseu",
         "county": "São Pedro do Sul"
     },
-    "etgfxggqmjvk": {
-        "district": "Ilha da Madeira",
-        "county": "Santana"
+    "ez4ry1dcsjpg": {
+        "district": "Viseu",
+        "county": "Sátão"
     },
-    "etgctxqnr660": {
+    "ez68s1bpscef": {
+        "district": "Viseu",
+        "county": "Sernancelhe"
+    },
+    "ez69fuucnnds": {
+        "district": "Viseu",
+        "county": "Tabuaço"
+    },
+    "ez63m10dpqcb": {
+        "district": "Viseu",
+        "county": "Tarouca"
+    },
+    "ez4nrnddc7v4": {
+        "district": "Viseu",
+        "county": "Tondela"
+    },
+    "ez62rk28pp1s": {
+        "district": "Viseu",
+        "county": "Vila Nova de Paiva"
+    },
+    "ez4r35swum6j": {
+        "district": "Viseu",
+        "county": "Viseu"
+    },
+    "ez4pxje61fxh": {
+        "district": "Viseu",
+        "county": "Vouzela"
+    },
+    "etgf0xkg54hb": {
+        "district": "Ilha da Madeira",
+        "county": "Calheta"
+    },
+    "etgcu9edvwx3": {
         "district": "Ilha da Madeira",
         "county": "Câmara de Lobos"
     },
-    "etu1bynxw05d": {
-        "district": "Ilha da Madeira",
-        "county": "Santa Cruz"
-    },
-    "etgcxpxmzpzd": {
+    "etgcy1d6d84k": {
         "district": "Ilha da Madeira",
         "county": "Funchal"
     },
-    "etgf1hg5jefw": {
-        "district": "Ilha da Madeira",
-        "county": "Calheta"
-    },
-    "etgfcr5xuqqf": {
-        "district": "Ilha da Madeira",
-        "county": "Porto Moniz"
-    },
-    "etgcfv3jn0qy": {
-        "district": "Ilha da Madeira",
-        "county": "Ponta do Sol"
-    },
-    "etgfs56x4e2g": {
-        "district": "Ilha da Madeira",
-        "county": "São Vicente"
-    },
-    "etgcgemt5f86": {
-        "district": "Ilha da Madeira",
-        "county": "Ribeira Brava"
-    },
-    "etu44mp2w418": {
+    "etu41n56u5mt": {
         "district": "Ilha da Madeira",
         "county": "Machico"
     },
-    "etukh72q4h4t": {
+    "etgcfwyy39df": {
+        "district": "Ilha da Madeira",
+        "county": "Ponta do Sol"
+    },
+    "etgfcp4w1kr1": {
+        "district": "Ilha da Madeira",
+        "county": "Porto Moniz"
+    },
+    "etgcgscbs41p": {
+        "district": "Ilha da Madeira",
+        "county": "Ribeira Brava"
+    },
+    "etu411ru6m1j": {
+        "district": "Ilha da Madeira",
+        "county": "Santa Cruz"
+    },
+    "etgfx5ewe3dd": {
+        "district": "Ilha da Madeira",
+        "county": "Santana"
+    },
+    "etgfecumtjk7": {
+        "district": "Ilha da Madeira",
+        "county": "São Vicente"
+    },
+    "etukh4rt7mmd": {
         "district": "Ilha de Porto Santo",
         "county": "Porto Santo"
     },
-    "eqw4kf8ufpzx": {
+    "eqw46c2z7tt8": {
         "district": "Ilha de Santa Maria",
         "county": "Vila do Porto"
     },
-    "eqtyt4nzzu5u": {
-        "district": "Ilha de São Miguel",
-        "county": "Vila Franca do Campo"
-    },
-    "eqtwxykb5u6p": {
-        "district": "Ilha de São Miguel",
-        "county": "Ponta Delgada"
-    },
-    "eqwn9x9590gr": {
-        "district": "Ilha de São Miguel",
-        "county": "Povoação"
-    },
-    "eqtyengkebmn": {
+    "eqtyc8593qpb": {
         "district": "Ilha de São Miguel",
         "county": "Lagoa"
     },
-    "eqwp4he553qd": {
+    "eqwp5rh7cury": {
         "district": "Ilha de São Miguel",
         "county": "Nordeste"
     },
-    "eqtz5m3k0v20": {
+    "eqtwwz5zwqhf": {
+        "district": "Ilha de São Miguel",
+        "county": "Ponta Delgada"
+    },
+    "eqwn9rbtyd6p": {
+        "district": "Ilha de São Miguel",
+        "county": "Povoação"
+    },
+    "eqtz4u9m3zxg": {
         "district": "Ilha de São Miguel",
         "county": "Ribeira Grande"
     },
-    "equeuteqf6fw": {
+    "eqtysfc646ru": {
+        "district": "Ilha de São Miguel",
+        "county": "Vila Franca do Campo"
+    },
+    "equegvwzg88j": {
         "district": "Ilha Terceira",
         "county": "Angra do Heroísmo"
     },
-    "-1": {
+    "equsrepex4dq": {
         "district": "Ilha Terceira",
         "county": "Vila da Praia da Vitória"
     },
-    "equn4t3ed62e": {
+    "equn65f2vfxy": {
         "district": "Ilha Graciosa",
         "county": "Santa Cruz da Graciosa"
     },
-    "equ5d7vm6ve7": {
+    "equ5d5rkv4bj": {
         "district": "Ilha de São Jorge",
         "county": "Calheta"
     },
-    "eqgun1mtbuwf": {
+    "eqgujf1quxeb": {
         "district": "Ilha de São Jorge",
         "county": "Velas"
     },
-    "eqgfmj7rgs2s": {
+    "eqgfmm8wfvrf": {
         "district": "Ilha do Pico",
         "county": "Lajes do Pico"
     },
-    "eqgenzm4q6pf": {
+    "eqgenwe4ncxg": {
         "district": "Ilha do Pico",
         "county": "Madalena"
     },
-    "eqgg5e1uux9w": {
+    "eqgg57szsgpg": {
         "district": "Ilha do Pico",
         "county": "São Roque do Pico"
     },
-    "eqgehx2jnhg3": {
+    "eqge5zn8c2xf": {
         "district": "Ilha do Faial",
         "county": "Horta"
     },
-    "er1b36p6ngwc": {
+    "er1b42fxpwpc": {
         "district": "Ilha das Flores",
         "county": "Lajes das Flores"
     },
-    "er1bd41gvq3x": {
+    "er1b7nsy4mxf": {
         "district": "Ilha das Flores",
         "county": "Santa Cruz das Flores"
     },
-    "er1cu4tzgkcd": {
+    "er1cey4yw8gc": {
         "district": "Ilha do Corvo",
         "county": "Corvo"
     }
