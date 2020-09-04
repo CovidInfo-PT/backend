@@ -1,0 +1,40 @@
+# if we make a request toapi.proxi-mo.pt -> return the api
+server {
+    listen 80;
+    listen [::]:80;
+    server_name api.proxi-mo.pt;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    
+
+    location ^~ /static/emulated_database/ {
+	alias /home/emulated_database/;
+    }
+
+    location /static/ {
+        root /home/covid_rest_api;
+    }
+	location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/covid_rest_api/covid_rest_api.sock;
+    }
+}
+
+
+# if we make a request to http://78.46.194.121/ -> return nginx custom html
+#server {
+#        listen 80 default_server;
+#        listen [::]:80 default_server;
+#
+#        root /var/www/html;
+#
+#        # Add index.php to the list if you are using PHP
+#        index index.html index.htm index.nginx-debian.html;
+#
+#        server_name _;
+#
+#        location / {
+#                try_files $uri $uri/ =404;
+#        }
+#}
+

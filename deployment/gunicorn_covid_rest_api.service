@@ -1,0 +1,10 @@
+[Unit]
+Description=gunicorn covid rest api daemon
+After=network.target
+
+[Service]
+Group=www-data
+WorkingDirectory=/home/covid_rest_api
+ExecStart=/bin/bash -c "export EMULATED_DATABASE_DIR=/home/COVID_FILES/EMULATED_DATABASE/ && source venv/bin/activate && /usr/bin/gunicorn3 --access-logfile - --workers 3 --bind unix:/home/covid_rest_api/covid_rest_api.sock covid_rest_api.wsgi:application"
+[Install]
+WantedBy=multi-user.target
